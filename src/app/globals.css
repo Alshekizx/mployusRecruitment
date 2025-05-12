@@ -1,26 +1,213 @@
 @import "tailwindcss";
 
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --primary-color: #D63384;  /* Bright pink (buttons, highlights) */
+  --primaryTrans-color: #d633842a;  /* Translucent pink */
+  --secondary-color: #6C757D;  /* Muted gray text */
+  --background-light: linear-gradient(135deg, #fff0f6 0%, #f8e1ff 30%, #fff0f6 60%, #f3e8ff 100%); /* soft pinkish background */
+  --text-dark: #212529;  /* Strong dark text */
+  --text-muted: #6c757d;  /* Muted dark gray */
+  --card-bg: #ffffff;  /* white card background */
+  --border-color: #ffddea;  /* light gray border */
+  --accent-color: #8E44AD;  /* soft purple accent */
+  --background: #fce5ee;
+  --foreground: #111111;
 }
+
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --color-text: var(--text-dark);
+  --color-text-muted: var(--text-muted);
+  --color-card-bg: var(--card-bg);
+  --color-border: var(--border-color);
+  --color-primary: var(--primary-color);
+  --color-primaryTrans: var(--primaryTrans-color);
+  --color-secondary: var(--secondary-color);
+  --color-accent: var(--accent-color);
+ 
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+ :root {
+  --primary-color: #D63384;  /* Bright pink (buttons, highlights) */
+  --primaryTrans-color: #d6338466;  /* Translucent pink */
+  --secondary-color: #6C757D;  /* Muted gray text */
+  --background-light: linear-gradient(135deg, #fff0f6 0%, #f8e1ff 30%, #fff0f6 60%, #f3e8ff 100%); /* soft pinkish background */
+  --text-dark: #212529;  /* Strong dark text */
+  --text-muted: #6c757d;  /* Muted dark gray */
+  --card-bg: #ffffff;  /* white card background */
+  --border-color: #dee2e6;  /* light gray border */
+  --accent-color: #8E44AD;  /* soft purple accent */
+  --background: #fce5ee;
+  --foreground: #111111;
 }
+  }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--text-dark);
+  ;
+  
+}
+
+h1, h2{
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--text-dark);
+}
+
+h1 {
+  font-size: 3rem; /* Increased from 2.5rem */
+}
+
+h2 {
+  font-size: 2.5rem; /* Increased from 2rem */
+  color: var(--primary-color);
+}
+
+h3 {
+  font-size: 2rem; 
+   font-weight: 400;
+}
+
+p {
+  font-size: 1.125rem; /* Increased from 1rem */
+  color: var(--text-muted);
+}
+ .links{
+  color: var(--text-muted);
+  text-decoration: none;
+ }
+  .links:hover{
+    color: var(--primary-color);
+    text-decoration: underline;
+  }
+
+
+.button,
+.inverseButton {
+  font-size: 1.125rem; /* Increased from 1rem */
+}
+
+
+
+.button {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: var(--primaryTrans-color);
+  color: var(--primary-color);
+}
+
+.inverseButton {
+  background-color: var(--primaryTrans-color);
+  color: var(--primary-color);
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.inverseButton:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.callToActionButton {
+  background-color: #ffffff;
+  color: var(--primary-color);
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.callToActionButton:hover {
+  background-color: var(--accent-color);
+  color:  #ffffff;
+}
+
+.card {
+  background-color: var(--card-bg);
+  border-radius: 0.75rem;
+  padding: 2rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+.card2 {
+  background-color: var(--card-bg);
+  padding: 5rem 2rem;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.modalCard {
+  background-color: var(--card-bg);
+  border-radius: 0.75rem;
+  padding: 1em;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.modalCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.card h3 {
+  color: var(--text-dark);
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.card p {
+  margin-top: 0.5rem;
+  color: var(--text-muted);
+}
+
+.containerDiv{
+  padding: 2rem;
+  min-height: 90vh;
+  width: 100%;
+  
+}
+
+.bg_themed_color{
+  background-image: var(--background-light);;
+}
+
+.inner_Padding{
+  padding: 5rem 0;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
