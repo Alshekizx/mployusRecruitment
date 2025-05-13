@@ -36,9 +36,9 @@ export default function Header() {
 
   const NavLinks = () => (
     <>
-      <Link href="#" className="links transition">Home</Link>
-      <Link href="#" className="links transition">For Job Seeker</Link>
-      <Link href="#" className="links transition">For Employer</Link>
+      <Link href="/" className="links transition">Home</Link>
+      <Link href="/forJobSeeker" className="links transition">For Job Seeker</Link>
+      <Link href="/" className="links transition">For Employer</Link>
       <Link href="#" className="links transition">Blog</Link>
       <Link href="#" className="links transition">Contact Us</Link>
     </>

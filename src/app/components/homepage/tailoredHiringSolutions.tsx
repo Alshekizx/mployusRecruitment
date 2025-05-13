@@ -27,7 +27,7 @@ export default function TailoredHiringSolutions() {
     <div className="containerDiv flex flex-col items-center justify-center  gap-10">
       <div className="text-center w-full max-w-[800px] ">
         <h3 className="text-[var(--primary-color)]">Tailored hiring solutions to match your business needs</h3>
-        <p>Whether you're scaling quickly or building a long-term team, we connect you with the right talent through flexible and strategic recruitment models.</p>
+        <p>Whether you&apos;re scaling quickly or building a long-term team, we connect you with the right talent through flexible and strategic recruitment models.</p>
       </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-4 w-full gap-4 ">

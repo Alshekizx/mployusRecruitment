@@ -2,9 +2,19 @@
 
 
 :root {
-  --primary-color: #D63384;  /* Bright pink (buttons, highlights) */
-  --primaryTrans-color: #d633842a;  /* Translucent pink */
-  --secondary-color: #6C757D;  /* Muted gray text */
+   --primary-color: #D63384; 
+   --primary-100: #FCE4EF;
+  --primary-200: #F8B3D4;
+  --primary-300: #F17AB0;
+  --primary-400: #E94894;
+  
+  --primaryTrans-color: #d6338466;  /* Translucent pink */
+  --secondary-color: #6C757D; 
+  --secondary-100: #F1F3F5;
+  --secondary-200: #D7DBDF;
+  --secondary-300: #ADB5BD;
+  --secondary-400: #868E96;
+
   --background-light: linear-gradient(135deg, #fff0f6 0%, #f8e1ff 30%, #fff0f6 60%, #f3e8ff 100%); /* soft pinkish background */
   --text-dark: #212529;  /* Strong dark text */
   --text-muted: #6c757d;  /* Muted dark gray */
@@ -25,18 +35,43 @@
   --color-text-muted: var(--text-muted);
   --color-card-bg: var(--card-bg);
   --color-border: var(--border-color);
+  
+  /* Primary Colors */
   --color-primary: var(--primary-color);
+  --color-primary-100: var(--primary-100);
+  --color-primary-200: var(--primary-200);
+  --color-primary-300: var(--primary-300);
+  --color-primary-400: var(--primary-400);
+  --color-primary-500: var(--primary-color);
   --color-primaryTrans: var(--primaryTrans-color);
+
+  /* Secondary Colors */
   --color-secondary: var(--secondary-color);
+  --color-secondary-100: var(--secondary-100);
+  --color-secondary-200: var(--secondary-200);
+  --color-secondary-300: var(--secondary-300);
+  --color-secondary-400: var(--secondary-400);
+  --color-secondary-500: var(--secondary-color);
   --color-accent: var(--accent-color);
  
 }
 
 @media (prefers-color-scheme: dark) {
  :root {
-  --primary-color: #D63384;  /* Bright pink (buttons, highlights) */
+  --primary-color: #D63384; 
+   --primary-100: #FCE4EF;
+  --primary-200: #F8B3D4;
+  --primary-300: #F17AB0;
+  --primary-400: #E94894;
+  
   --primaryTrans-color: #d6338466;  /* Translucent pink */
-  --secondary-color: #6C757D;  /* Muted gray text */
+  --secondary-color: #6C757D; 
+  --secondary-100: #F1F3F5;
+  --secondary-200: #D7DBDF;
+  --secondary-300: #ADB5BD;
+  --secondary-400: #868E96;
+ 
+
   --background-light: linear-gradient(135deg, #fff0f6 0%, #f8e1ff 30%, #fff0f6 60%, #f3e8ff 100%); /* soft pinkish background */
   --text-dark: #212529;  /* Strong dark text */
   --text-muted: #6c757d;  /* Muted dark gray */
