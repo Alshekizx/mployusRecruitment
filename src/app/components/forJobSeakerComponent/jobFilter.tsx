@@ -1,8 +1,7 @@
 "use client";
 import React, { useEffect, useState } from 'react';
-import { sampleJobs } from './sampleData';
 
-type FilterOptions = {
+export type FilterOptions = {
   jobType?: string;
   industry?: string;
   workModel?: string;
@@ -11,8 +10,24 @@ type FilterOptions = {
   experienceLevel?: string;
 };
 
-const JobFilter2: React.FC = () => {
-  const [filters, setFilters] = useState<FilterOptions>({});
+type JobFilter2Props = {
+  sampleJobs: {
+    jobType: string;
+    jobSector: string;
+    workType: string;
+    country: string;
+    location: string;
+    jobLevel: string;
+  }[];
+  filters: FilterOptions;
+  onFilterChange?: (filters: FilterOptions) => void;
+};
+
+const JobFilter2: React.FC<JobFilter2Props> = ({
+  sampleJobs,
+  filters,
+  onFilterChange,
+}) => {
   const [jobTypes, setJobTypes] = useState<string[]>([]);
   const [industries, setIndustries] = useState<string[]>([]);
   const [workModels, setWorkModels] = useState<string[]>([]);
@@ -20,7 +35,7 @@ const JobFilter2: React.FC = () => {
   const [locations, setLocations] = useState<string[]>([]);
   const [experienceLevels, setExperienceLevels] = useState<string[]>([]);
 
-  // Set filter options based on sampleJobs data
+  // Populate dropdown options from sampleJobs
   useEffect(() => {
     const jobTypeSet = new Set<string>();
     const industrySet = new Set<string>();
@@ -44,27 +59,27 @@ const JobFilter2: React.FC = () => {
     setCountries(Array.from(countrySet));
     setLocations(Array.from(locationSet));
     setExperienceLevels(Array.from(experienceLevelSet));
-  }, []);
+  }, [sampleJobs]);
 
   const handleSelect = (key: keyof FilterOptions, value: string) => {
-    setFilters(prev => ({ ...prev, [key]: value }));
+    const updatedFilters = { ...filters, [key]: value };
+    onFilterChange?.(updatedFilters);
   };
 
   const resetFilters = () => {
-    setFilters({});
+    onFilterChange?.({});
   };
 
-  // Dropdown component
   const renderDropdown = (
     label: string,
     key: keyof FilterOptions,
     options: string[]
   ) => (
     <div className="">
-        <select
+      <select
         value={filters[key] || ''}
         onChange={(e) => handleSelect(key, e.target.value)}
-        className="block w-full border border-gray-300 px-6 py-4 text-sm text-gray-700 shadow-sm focus:border-pink-400 focus:outline-none focus:ring-pink-400"
+        className="block w-full border border-gray-300 px-6 py-4"
       >
         <option value="">{label}</option>
         {options.map((opt) => (
@@ -76,23 +91,23 @@ const JobFilter2: React.FC = () => {
 
   return (
     <div className="w-full flex flex-col gap-6">
-        <p>Filter Applied</p>
+      <p className="text-lg font-medium">Filter Applied</p>
+
       {/* Tags */}
       <div className='rounded-lg border border-[var(--primary-200)] p-6 bg-[var(--primary-100)]'>
         <div className="flex flex-wrap gap-2 mb-4">
-          {Object.entries(filters).map(([key, value]) => (
-            value && (
+          {Object.entries(filters).map(([key, value]) =>
+            value ? (
               <span
                 key={key}
                 className="rounded-full bg-white border border-pink-100 text-gray-600 text-xs px-3 py-1"
               >
-                {value}
+                {`${key.charAt(0).toUpperCase() + key.slice(1)}: ${value}`}
               </span>
-            )
-          ))}
+            ) : null
+          )}
         </div>
 
-        {/* Reset Filter Button */}
         <button
           onClick={resetFilters}
           className="mb-4 w-full rounded-md border border-pink-500 text-pink-600 py-2 text-sm font-medium hover:bg-pink-100 transition"
@@ -102,7 +117,7 @@ const JobFilter2: React.FC = () => {
       </div>
 
       {/* Dropdowns */}
-      <div >
+      <div>
         {renderDropdown('Job Type', 'jobType', jobTypes)}
         {renderDropdown('Industry', 'industry', industries)}
         {renderDropdown('Work Model', 'workModel', workModels)}

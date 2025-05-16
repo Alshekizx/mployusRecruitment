@@ -33,7 +33,7 @@ const JobCard: React.FC<JobCardProps> = ({ jobs, onJobClick }) => {
             });
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = "white";
+            e.currentTarget.style.backgroundColor = "var(--secondary-100)";
 
             Array.from(e.currentTarget.querySelectorAll("p, span")).forEach((el) => {
               const isHeading = (el as HTMLElement).dataset.role === "heading";

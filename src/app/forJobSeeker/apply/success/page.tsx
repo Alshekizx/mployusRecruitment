@@ -16,7 +16,7 @@ const SuccessPage = () => {
 
       <div className="space-y-4">
         <button
-          onClick={() => router.push('/applications')}
+          onClick={() => router.push('/myApplications')}
           className="w-full button"
         >
           View Application

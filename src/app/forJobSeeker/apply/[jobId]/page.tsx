@@ -4,9 +4,10 @@ import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useParams } from "next/navigation";
 import { sampleJobs } from "@/app/components/forJobSeakerComponent/sampleData";
-import ApplySection from "../applyCard";
+import ApplySection from "../../../components/applyCard";
 import { ArrowLeftIcon } from "@heroicons/react/24/outline";
 import { DocumentArrowUpIcon } from "@heroicons/react/24/solid";
+import Link from "next/link";
 
 const ApplyPage = () => {
   const params = useParams();
@@ -34,7 +35,10 @@ const ApplyPage = () => {
     <div className="max-w-2xl mx-auto px-4 py-20 space-y-8">
       {/* Back Icon and Title */}
       <div className="flex items-center gap-2">
+
+        <Link href="/forJobSeeker" className="IconButton"> 
         <ArrowLeftIcon className="w-5 h-5 text-[--color-primary]" />
+        </Link>
         <p className="text-lg font-medium">Apply</p>
       </div>
 

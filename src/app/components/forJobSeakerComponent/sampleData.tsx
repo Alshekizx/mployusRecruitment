@@ -12,6 +12,7 @@ export interface Job {
   jobDescription: string;
   jobResponsibility: string[];
   jobRequirement: string[];
+  isApplied: boolean;
 }
 
 // Sample data for jobs
@@ -36,7 +37,9 @@ export const sampleJobs: Job[] = [
       "2+ years of experience in frontend development",
       "Proficiency in JavaScript, HTML, CSS, and React.js",
       "Good understanding of RESTful APIs and Git"
-    ]
+    ],
+    isApplied: true
+
   },
   {
     jobId: "JID-002",
@@ -58,7 +61,9 @@ export const sampleJobs: Job[] = [
       "5+ years experience in a marketing leadership role",
       "Excellent communication and project management skills",
       "Knowledge of digital marketing tools and analytics platforms"
-    ]
+    ],
+    isApplied: false
+
   },
   {
     jobId: "JID-003",
@@ -80,6 +85,7 @@ export const sampleJobs: Job[] = [
       "Strong communication and interpersonal skills",
       "Familiarity with CRM tools",
       "Patience and a problem-solving mindset"
-    ]
+    ],
+    isApplied: true
   }
 ];

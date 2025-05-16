@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 
 type FilterOption = {
   label: string;
@@ -11,33 +11,45 @@ type JobFilterProps = {
   jobTypes: FilterOption[];
   workTypes: FilterOption[];
   industries: FilterOption[];
+  filters: {
+    jobType?: string;
+    workType?: string;
+    industry?: string;
+  };
+  onFilterChange: (filters: {
+    jobType?: string;
+    workType?: string;
+    industry?: string;
+  }) => void;
 };
 
 export const JobFilter: React.FC<JobFilterProps> = ({
   jobTypes,
   workTypes,
   industries,
+  filters,
+  onFilterChange,
 }) => {
-  const [jobType, setJobType] = useState('');
-  const [workType, setWorkType] = useState('');
-  const [industry, setIndustry] = useState('');
+  const handleSelect = (key: keyof typeof filters, value: string) => {
+    onFilterChange({ ...filters, [key]: value });
+  };
 
   const handleSearch = () => {
-    console.log('Search Filters:', {
-      jobType,
-      workType,
-      industry,
-    });
-    // You can call a client-side fetch here if needed
+    onFilterChange(filters); // Already updated via handleSelect
   };
 
   return (
-    <div className="flex flex-row items-center justify-between gap-4  p-4 rounded-lg  border border-1" style={{ backgroundColor: 'var(--secondary-100)', borderColor: 'var(--secondary-200)' }}>
+    <div
+      className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4 p-4 rounded-lg border"
+      style={{
+        backgroundColor: 'var(--secondary-100)',
+        borderColor: 'var(--secondary-200)',
+      }}
+    >
       <select
-        value={jobType}
-        onChange={(e) => setJobType(e.target.value)}
-        className="p-4 border border-1 rounded-md w-full"
-        style={{borderColor: 'var(--secondary-200)', backgroundColor: '#ffffff'}}
+        value={filters.jobType || ''}
+        onChange={(e) => handleSelect('jobType', e.target.value)}
+        className="p-4 border rounded-md w-full md:w-auto flex-1 focus:ring-(--primary-color)"
       >
         <option value="">Job Type</option>
         {jobTypes.map((option) => (
@@ -48,10 +60,9 @@ export const JobFilter: React.FC<JobFilterProps> = ({
       </select>
 
       <select
-        value={workType}
-        onChange={(e) => setWorkType(e.target.value)}
-        className="p-4 border border-1 rounded-md w-full"
-        style={{borderColor: 'var(--secondary-200)', backgroundColor: '#ffffff'}}
+        value={filters.workType || ''}
+        onChange={(e) => handleSelect('workType', e.target.value)}
+        className="p-4 border rounded-md w-full md:w-auto flex-1 focus:ring-[var(--primary-color)]"
       >
         <option value="">Work Type</option>
         {workTypes.map((option) => (
@@ -62,10 +73,9 @@ export const JobFilter: React.FC<JobFilterProps> = ({
       </select>
 
       <select
-        value={industry}
-        onChange={(e) => setIndustry(e.target.value)}
-        className="p-4 border border-1 rounded-md w-full"
-        style={{borderColor: 'var(--secondary-200)', backgroundColor: '#ffffff'}}
+        value={filters.industry || ''}
+        onChange={(e) => handleSelect('industry', e.target.value)}
+        className="p-4 border rounded-md w-full md:w-auto flex-1 focus:ring-[var(--primary-color)]"
       >
         <option value="">Industry</option>
         {industries.map((option) => (
@@ -75,7 +85,10 @@ export const JobFilter: React.FC<JobFilterProps> = ({
         ))}
       </select>
 
-      <button onClick={handleSearch} className="button w-full">
+      <button
+        onClick={handleSearch}
+        className=" button w-full md:w-auto text-white  py-3 px-6 rounded-md  transition"
+      >
         Search
       </button>
     </div>
