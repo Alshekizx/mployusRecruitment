@@ -5,13 +5,13 @@ export interface BlogSubtopic {
 
 export interface BlogPost {
   slug: string;
-  image: string;
   title: string;
-  summary: string;
   category: string;
-  readTime: string;
-  subtopics: BlogSubtopic[];
+  image: string;
+  summary: string;
   datePosted: string;
+  readTime: string;
+  subtopics: { heading: string; content: string }[];
 }
 
 export const blogData: BlogPost[] = [

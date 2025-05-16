@@ -39,7 +39,7 @@ const BlogIndexPage = () => {
       key={post.slug}
       slug={post.slug}
       image={post.image}
-      category={post.category}
+     
       title={post.title}
       date={formatDate(post.datePosted)}
       readTime={post.readTime}
