@@ -6,18 +6,28 @@ import { MapPinIcon } from "@heroicons/react/24/solid";
 interface JobCardProps {
   jobs: Job[];
   onJobClick: (job: Job) => void;
+  currentPage: number;
+  totalPages: number;
+  onPageChange: (page: number) => void;
 }
 
-const JobCard: React.FC<JobCardProps> = ({ jobs, onJobClick }) => {
+
+const JobCard: React.FC<JobCardProps> = ({ jobs, onJobClick, currentPage, totalPages, onPageChange }) => {
   const primaryColor = "var(--primary-color)";
   const primaryLight = "var(--primary-200)";
   const primaryBorder = "var(--primary-300)";
 
+  const jobsPerPage = 10;
+  const paginatedJobs = jobs.slice(
+    (currentPage - 1) * jobsPerPage,
+    currentPage * jobsPerPage
+  );
+
   return (
-    <div className="flex flex-col space-y-5">
+    <div className="flex flex-col space-y-6">
       <p>Available Vacancies</p>
 
-      {jobs.map((job: Job) => (
+      {paginatedJobs.map((job: Job) => (
         <div
           key={job.jobId}
           className="group flex flex-col space-y-2 rounded-lg border-l-4 p-6 transition duration-300"
@@ -86,6 +96,25 @@ const JobCard: React.FC<JobCardProps> = ({ jobs, onJobClick }) => {
           </div>
         </div>
       ))}
+
+      <div className="flex justify-end items-center space-x-2 mt-4">
+  {Array.from({ length: totalPages }, (_, index) => {
+    const pageNum = index + 1;
+    return (
+      <button
+        key={pageNum}
+        onClick={() => onPageChange(pageNum)}
+        className={`w-10 h-10 border text-sm font-medium ${
+          currentPage === pageNum
+            ? 'bg-[var(--primary-color)] text-white'
+            : 'bg-[var(--primary-100)] text-[var(--primary-color)]'
+        }`}
+      >
+        {pageNum}
+      </button>
+    );
+  })}
+</div>
     </div>
   );
 };

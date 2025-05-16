@@ -6,6 +6,7 @@ import JobFilter2 from "../components/forJobSeakerComponent/jobFilter";
 import JobCard from "../components/forJobSeakerComponent/jobCard";
 import JobApplicationDetail from "../components/forJobSeakerComponent/jobApplicationDetails";
 import type { FilterOptions } from "../components/forJobSeakerComponent/jobFilter"; 
+import StickyBox from 'react-sticky-box';
 
 const jobTypeOptions = Array.from(new Set(sampleJobs.map(job => job.jobType))).map(value => ({
   label: value,
@@ -27,19 +28,24 @@ const industryOptions = Array.from(new Set(sampleJobs.map(job => job.jobSector))
 export default function ForJobSeeker() {
   const [selectedJob, setSelectedJob] = useState<Job | null>(null);
   const [filters, setFilters] = useState<FilterOptions>({});
-
+  const [currentPage, setCurrentPage] = useState(1);
+  const jobsPerPage = 10;
+ 
+  
 
 
   // Filtering logic
     const filteredJobs = sampleJobs.filter(job =>
-      (!filters.jobType || job.jobType === filters.jobType) &&
-      (!filters.workModel || job.workType === filters.workModel) &&
-      (!filters.industry || job.jobSector === filters.industry)
-    );
+  (!filters.jobType || job.jobType === filters.jobType) &&
+  (!filters.workModel || job.workType === filters.workModel) &&
+  (!filters.industry || job.jobSector === filters.industry)
+);
 
+const totalPages = Math.ceil(filteredJobs.length / jobsPerPage);
   return (
     <div className="containerDiv">
-      <div className="py-20 flex flex-col gap-8">
+      <div className="pt-20 flex flex-col gap-16">
+        <div className="flex flex-col gap-6" >
         <p>Find Available Vacancy</p>
       <JobFilter
         filters={{
@@ -60,14 +66,21 @@ export default function ForJobSeeker() {
         }
       />
 
-        <div className="flex flex-row gap-10">
-          <div className="hidden md:block w-full max-w-[300px]">
-            <JobFilter2
-              filters={filters}
-              sampleJobs={sampleJobs}
-              onFilterChange={setFilters}
-            />
+      </div>
+
+        <div className="flex flex-row gap-10 min-h-[1000px]">
+          <div className="hidden lg:block" style={{ width: '350px' }}>
+            <StickyBox offsetTop={40} offsetBottom={0}>
+              <div>
+                <JobFilter2
+                  filters={filters}
+                  sampleJobs={sampleJobs}
+                  onFilterChange={setFilters}
+                />
+              </div>
+            </StickyBox>
           </div>
+
 
           <div className="w-full">
             {selectedJob ? (
@@ -76,7 +89,11 @@ export default function ForJobSeeker() {
                 onBack={() => setSelectedJob(null)} 
               />
             ) : (
-              <JobCard jobs={filteredJobs} onJobClick={setSelectedJob} />
+              <JobCard jobs={filteredJobs} onJobClick={setSelectedJob} 
+              currentPage={currentPage}
+              totalPages={totalPages}
+              onPageChange={setCurrentPage}
+              />
             )}
           </div>
         </div>

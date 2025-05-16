@@ -9,7 +9,7 @@ import Testimonials from "./components/homepage/testimonia";
 
 export default function Home() {
   return (
-    <div className="py-10">
+    <div className="py-20 flex flex-col gap-20">
      <Hero/>
      <WhatWeOffer/>
      <TailoredHiringSolutions/>

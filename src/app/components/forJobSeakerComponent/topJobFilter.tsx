@@ -49,7 +49,8 @@ export const JobFilter: React.FC<JobFilterProps> = ({
       <select
         value={filters.jobType || ''}
         onChange={(e) => handleSelect('jobType', e.target.value)}
-        className="p-4 border rounded-md w-full md:w-auto flex-1 focus:ring-(--primary-color)"
+        className="p-3 border border-[var(--secondary-200)] rounded-md w-full md:w-auto flex-1 custom-ring-color"
+        
       >
         <option value="">Job Type</option>
         {jobTypes.map((option) => (
@@ -62,7 +63,8 @@ export const JobFilter: React.FC<JobFilterProps> = ({
       <select
         value={filters.workType || ''}
         onChange={(e) => handleSelect('workType', e.target.value)}
-        className="p-4 border rounded-md w-full md:w-auto flex-1 focus:ring-[var(--primary-color)]"
+        className="p-3 border border-[var(--secondary-200)] rounded-md w-full md:w-auto flex-1 custom-ring-color"
+        
       >
         <option value="">Work Type</option>
         {workTypes.map((option) => (
@@ -75,7 +77,8 @@ export const JobFilter: React.FC<JobFilterProps> = ({
       <select
         value={filters.industry || ''}
         onChange={(e) => handleSelect('industry', e.target.value)}
-        className="p-4 border rounded-md w-full md:w-auto flex-1 focus:ring-[var(--primary-color)]"
+        className="p-3 border border-[var(--secondary-200)] rounded-md w-full md:w-auto flex-1 custom-ring-color"
+        
       >
         <option value="">Industry</option>
         {industries.map((option) => (
@@ -87,7 +90,7 @@ export const JobFilter: React.FC<JobFilterProps> = ({
 
       <button
         onClick={handleSearch}
-        className=" button w-full md:w-auto text-white  py-3 px-6 rounded-md  transition"
+        className=" button w-full max-w-[200px] text-white  py-3 px-6 rounded-md  transition"
       >
         Search
       </button>

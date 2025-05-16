@@ -24,17 +24,17 @@ export default function WhatWeOffer() {
   ];
 
   return (
-    <div className="containerDiv flex flex-col items-center justify-center  gap-10">
+    <div className="containerDiv flex flex-col items-center justify-center  gap-20">
       <div className="text-center w-full ">
         <h3 className="text-[var(--primary-color)]">WHAT WE OFFER</h3>
-        <p>Solutions designed to take your recruitment to the next level</p>
+        <p className="text-[var(--text-muted)]">Solutions designed to take your recruitment to the next level</p>
       </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 w-full bg-[var(--background)] ">
+        <div className="grid grid-cols-1 sm:grid-cols-2 w-full bg-[var(--card-Trans)] ">
         {services.map((service, index) => (
-          <div key={index} className=" border-1 border-[var(--border-color)] p-5">
-            <p className="" style={{color: "var(--primary-color)" }}>{service.title}</p>
-            <p>{service.description}</p>
+          <div key={index} className="  p-5">
+            <p className="text-[var(--primary-color)]" >{service.title}</p>
+            <p className="text-[var(--text-muted)]">{service.description}</p>
           </div>
         ))}
       </div>

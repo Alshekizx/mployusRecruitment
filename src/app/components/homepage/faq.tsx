@@ -35,9 +35,9 @@ const FaqAccordion = () => {
   return (
     <section className="containerDiv">
       <div>
-        <h2 className="text-start text-[var(--primary-color)] text-3xl font-bold mb-4">
+        <h3 className="text-start text-[var(--primary-color)] text-3xl font-bold mb-4">
           Frequently Asked Questions
-        </h2>
+        </h3>
         <p className="text-start text-[var(--text-muted)] mb-10 text-sm">
           Got questions? Our FAQ section provides answers to common inquiries on hiring, workforce
           management, locum staffing, and HR software, helping you navigate our solutions with ease.
@@ -51,11 +51,11 @@ const FaqAccordion = () => {
                 onClick={() => toggle(index)}
               >
                 <h3 className="font-semibold text-[var(--text-dark)] text-base">{faq.question}</h3>
-                <div className="modalCard" style={{ backgroundColor: "var(--text-muted)", padding: "0.5rem" }}>
+                <div className="modalCard" style={{ backgroundColor: "var(--primary-100)", padding: "0.5rem" }}>
                 {openIndex === index ? (
-                  <XMarkIcon className="w-5 h-5 text-[var(--card-bg)]" />
+                  <XMarkIcon className="w-5 h-5 text-[var(--primary-color)]" />
                 ) : (
-                  <PlusIcon className="w-5 h-5 text-[var(--card-bg)]" />
+                  <PlusIcon className="w-5 h-5 text-[var(--primary-color)]" />
                 )}
                 </div>
               </div>

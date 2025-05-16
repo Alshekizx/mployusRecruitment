@@ -14,23 +14,32 @@ export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
+  const mobileMenuRef = useRef<HTMLDivElement | null>(null);
 
-  const { isLoggedIn } = useAuth(); // Replace with actual auth check
-  const { logout } = useAuth();
+ const { isLoggedIn, logout } = useAuth();
+
 
   // Close dropdown on outside click
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        dropdownRef.current &&
-        !dropdownRef.current.contains(event.target as Node)
-      ) {
-        setIsDropdownOpen(false);
-      }
-    };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+          if (
+            dropdownRef.current &&
+            !dropdownRef.current.contains(event.target as Node)
+          ) {
+            setIsDropdownOpen(false);
+          }
+
+          if (
+            mobileMenuRef.current &&
+            !mobileMenuRef.current.contains(event.target as Node)
+          ) {
+            setIsMobileMenuOpen(false);
+          }
+        };
+
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => document.removeEventListener('mousedown', handleClickOutside);
+      }, []);
 
   const UserIcon = () =>
     isLoggedIn ? (
@@ -48,7 +57,7 @@ export default function Header() {
           />
         </button>
         {isDropdownOpen && (
-          <div className="absolute right-0 mt-2 w-40 bg-white border rounded shadow-lg z-50 text-sm">
+          <div className="absolute right-0 mt-2 w-40 bg-[var(--header-color)] border rounded shadow-lg z-50 text-sm">
             <Link
               href="/myApplications"
               className="block px-4 py-2 hover:text-[var(--primary-color)] text-[var(--text-dark)]"
@@ -86,7 +95,7 @@ export default function Header() {
   );
 
   return (
-    <header className="bg-[var(--card-bg)] text-[var(--text-dark)] border-b border-[var(--border-color)] fixed top-0 w-full z-50">
+    <header className="bg-[var(--header-color)] text-[var(--text-dark)] border-b border-[var(--border-color)] fixed top-0 w-full z-50">
       <div className="px-4 py-4 flex justify-between items-center">
         {/* Logo and Icons */}
         <div className="flex items-center space-x-1">
@@ -130,7 +139,10 @@ export default function Header() {
 
       {/* Mobile Nav */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden flex flex-col bg-[var(--card-bg)] px-4 pb-4 space-y-2 text-[var(--text-muted)]">
+        <div
+          ref={mobileMenuRef}
+          className="lg:hidden flex flex-col bg-[var(--header-color)] px-4 pb-4 space-y-2 text-[var(--text-muted)]"
+        >
           <NavLinks />
         </div>
       )}

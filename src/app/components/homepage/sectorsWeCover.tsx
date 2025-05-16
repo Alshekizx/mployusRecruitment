@@ -37,7 +37,7 @@ export default function SectorsWeCover() {
   ];
 
   return (
-    <div className="containerDiv flex flex-col items-center justify-center gap-10">
+    <div className="containerDiv flex flex-col items-center justify-center gap-20">
       <div className="text-center w-full max-w-[800px]">
         <h3 className="text-[var(--primary-color)] text-2xl font-bold">Sectors We Cover</h3>
         <p className="text-base">
@@ -46,7 +46,7 @@ export default function SectorsWeCover() {
       </div>
 
       <div className="w-full overflow-x-auto scrollbar-hide">
-        <div className="flex gap-4 w-max">
+        <div className="flex gap-6 w-max">
           {services.map((service, index) => (
             <div
               key={index}

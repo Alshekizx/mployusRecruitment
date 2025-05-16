@@ -2,7 +2,9 @@
 
 
 :root {
-  --primary-color: #a1007e;
+--header-color:#FFF1FE;
+--primary-color: #a1007e;
+  
 
 /* Tints: lighter versions of the primary color */
 --primary-100: #fce9f7; /* very light tint */
@@ -21,7 +23,8 @@
   --background-light: linear-gradient(135deg, #fff0f6 0%, #f8e1ff 30%, #fff0f6 60%, #f3e8ff 100%); /* soft pinkish background */
   --text-dark: #212529;  /* Strong dark text */
   --text-muted: #6c757d;  /* Muted dark gray */
-  --card-bg: #ffffff;  /* white card background */
+  --card-bg: #ffffff;  
+  --card-Trans:#FFF1FE80;
   --border-color: #ffddea;  /* light gray border */
   --accent-color: #8E44AD;  /* soft purple accent */
   --background: #fce5ee;
@@ -37,7 +40,10 @@
   --color-text: var(--text-dark);
   --color-text-muted: var(--text-muted);
   --color-card-bg: var(--card-bg);
+  --color-card-trans: var(--card-Trans);
   --color-border: var(--border-color);
+
+  --color-header: var(--header-color);
   
   /* Primary Colors */
   --color-primary: var(--primary-color);
@@ -61,7 +67,10 @@
 
 @media (prefers-color-scheme: dark) {
  :root {
+
+--header-color:#FFF1FE;
 --primary-color: #a1007e;
+
 
 /* Tints: lighter versions of the primary color */
 --primary-100: #fce9f7; /* very light tint */
@@ -81,7 +90,8 @@
   --background-light: linear-gradient(135deg, #fff0f6 0%, #f8e1ff 30%, #fff0f6 60%, #f3e8ff 100%); /* soft pinkish background */
   --text-dark: #212529;  /* Strong dark text */
   --text-muted: #6c757d;  /* Muted dark gray */
-  --card-bg: #ffffff;  /* white card background */
+  --card-bg: #ffffff;
+  --card-Trans:#FFF1FE80;
   --border-color: #dee2e6;  /* light gray border */
   --accent-color: #8E44AD;  /* soft purple accent */
   --background: #fce5ee;
@@ -94,12 +104,13 @@ body {
   font-size: 16px;
   font-weight: 400;
   color: var(--text-dark);
+  line-height: 1.2;
   ;
   
 }
 
 h1, h2{
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.2;
   color: var(--text-dark);
 }
@@ -120,7 +131,6 @@ h3 {
 
 p {
   font-size: 1.125rem; /* Increased from 1rem */
-  color: var(--text-muted);
 }
  .links{
   color: var(--text-muted);
@@ -142,7 +152,8 @@ p {
 
 .button,
 .inverseButton {
-  font-size: 1.125rem; /* Increased from 1rem */
+  font-size: 1rem; 
+  font-weight: 500;
 }
 
 
@@ -151,17 +162,16 @@ p {
   background-color: var(--primary-color);
   color: #fff;
   padding: 0.75rem 1.5rem;
-  min-width: 200px;
+  
   border: none;
   border-radius: 0.5rem;
-  font-weight: 600;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .button:hover {
-  background-color: var(--primary-100);
-  color: var(--primary-color);
+  background-color: var(--primary-400);
+  
 }
 
 .inverseButton {
@@ -170,14 +180,13 @@ p {
   padding: 0.75rem 1.5rem;
   border: none;
   border-radius: 0.5rem;
-  font-weight: 600;
   cursor: pointer;
-  min-width: 200px;
+ 
   transition: background-color 0.3s ease;
 }
 
 .inverseButton:hover {
-  background-color: var(--primary-color);
+  background-color: var(--primary-400);
   color: #fff;
 }
 
@@ -295,4 +304,28 @@ p {
 
 .animate-spin {
   animation: spin 1s linear infinite;
+}
+
+.card-texture-bg {
+  background-image: url('/images/cardtexture.png');
+  background-size: 120%;
+  background-position: center;
+}
+
+.card-texture-bg2 {
+  background-image: url('/images/cardtexture2.png');
+  background-size: 120%;
+  background-position: center;
+}
+
+.custom-ring-color {
+  --tw-ring-color: var(--primary-color);
+  outline: none;
+  background-color: white;
+ 
+}
+
+.custom-ring-color:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--tw-ring-color); /* this mimics `focus:ring-2` */
 }
