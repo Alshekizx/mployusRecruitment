@@ -272,11 +272,18 @@ p {
 }
 
 .containerDiv{
-  padding: 2rem;
+  padding: 2rem 5rem;
   min-height: 90vh;
   width: 100%;
   
 }
+@media (max-width: 768px) {
+ .containerDiv {
+   padding: 2rem;
+ }
+}
+
+
 
 .bg_themed_color{
   background-image: var(--background-light);;
