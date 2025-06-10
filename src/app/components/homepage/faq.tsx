@@ -45,26 +45,55 @@ const FaqAccordion = () => {
 
         <div className="space-y-4">
           {faqs.map((faq, index) => (
-            <div key={index} className="bg-[var(--card-bg)] rounded-lg p-6 border border-[var(--border-color)]">
-              <div
-                className="flex justify-between items-center cursor-pointer"
-                onClick={() => toggle(index)}
-              >
-                <h3 className="font-semibold text-[var(--text-dark)] text-base">{faq.question}</h3>
-                <div className="modalCard" style={{ backgroundColor: "var(--primary-100)", padding: "0.5rem" }}>
-                {openIndex === index ? (
-                  <XMarkIcon className="w-5 h-5 text-[var(--primary-color)]" />
-                ) : (
-                  <PlusIcon className="w-5 h-5 text-[var(--primary-color)]" />
-                )}
-                </div>
-              </div>
-              {openIndex === index && (
-                <div className="mt-4 border-t pt-4 text-sm text-[var(--text-muted)]">
-                  {faq.answer}
-                </div>
-              )}
-            </div>
+            <div
+  key={index}
+  className={`rounded-lg p-6 border border-[var(--border-color)] transition-colors duration-300 ${
+    openIndex === index
+      ? "bg-[var(--primary-color)] text-white"
+      : "bg-[var(--card-bg)] text-[var(--text-dark)]"
+  }`}
+>
+  <div
+    className="flex justify-between items-center cursor-pointer"
+    onClick={() => toggle(index)}
+  >
+    <h3
+      className={`font-semibold text-base ${
+        openIndex === index ? "text-white" : "text-[var(--text-dark)]"
+      }`}
+    >
+      {faq.question}
+    </h3>
+    <div
+      className="modalCard"
+      style={{
+        backgroundColor:
+          openIndex === index
+            ? "rgba(255, 255, 255, 0.2)"
+            : "var(--primary-100)",
+        padding: "0.5rem",
+      }}
+    >
+      {openIndex === index ? (
+        <XMarkIcon className="w-5 h-5 text-white" />
+      ) : (
+        <PlusIcon className="w-5 h-5 text-[var(--primary-color)]" />
+      )}
+    </div>
+  </div>
+
+  {openIndex === index && (
+    <div
+      className={`mt-4 border-t pt-4 text-sm ${
+        openIndex === index
+          ? "text-white border-white"
+          : "text-[var(--text-muted)]"
+      }`}
+    >
+      {faq.answer}
+    </div>
+  )}
+</div>
           ))}
         </div>
       </div>

@@ -67,18 +67,18 @@ useEffect(() => {
           <div className="absolute right-0 mt-2 w-40 bg-[var(--header-color)] border rounded shadow-lg z-50 text-sm">
             <Link
               href="/myApplications"
-              className="block px-4 py-2 hover:text-[var(--primary-color)] text-[var(--text-dark)]"
+              className="block px-4 py-2 cursor-pointer hover:text-[var(--primary-color)] text-[var(--text-dark)]"
             >
               My Applications
             </Link>
             <Link
               href="/myProfile"
-              className="block px-4 py-2 hover:text-[var(--primary-color)] text-[var(--text-dark)]"
+              className="block px-4 py-2 cursor-pointer hover:text-[var(--primary-color)] text-[var(--text-dark)]"
             >
               My Profile
             </Link>
 
-          <button onClick={logout} className="block px-4 py-2 hover:text-[var(--primary-color)] text-[var(--text-dark)]">
+          <button onClick={logout} className="block px-4 py-2 cursor-pointer hover:text-[var(--primary-color)] text-[var(--text-dark)]">
             Logout
           </button>
 
@@ -86,7 +86,7 @@ useEffect(() => {
         )}
       </div>
     ) : (
-      <Link href="/auth/login" className="links responsive-button transition">
+      <Link href="/auth/login" className="links responsive-button transition cursor-pointer">
         Login / Signup
       </Link>
     );

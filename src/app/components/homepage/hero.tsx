@@ -37,7 +37,7 @@ export default function Hero() {
     alt="Decor Top Right"
     width={200}
     height={200}
-    className="absolute z-0 w-80 h-auto right-0 top-0"
+    className="absolute z-0 w-70 h-auto right-0 top-0"
     priority
   />
   <Image
@@ -45,7 +45,7 @@ export default function Hero() {
     alt="Decor Bottom Left"
     width={200}
     height={200}
-    className="absolute z-0 w-80 h-auto left-0 bottom-0 transform scale-x-[-1]"
+    className="absolute z-0 w-70 h-auto left-0 bottom-0 transform scale-x-[-1]"
     priority
   />
   <Image
@@ -53,7 +53,7 @@ export default function Hero() {
     alt="Team Hero Pic"
     width={630}
     height={460}
-    className="relative object-contain z-10 left-1/2 transform -translate-x-1/2 mt-2 h-auto"
+    className="relative object-contain z-10 left-1/2 transform -translate-x-1/2 mt-2 h-auto max-h-[550px]"
     priority
   />
 </div>
