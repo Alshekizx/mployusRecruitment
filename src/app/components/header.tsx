@@ -15,31 +15,38 @@ export default function Header() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
   const mobileMenuRef = useRef<HTMLDivElement | null>(null);
+  const mobileMenuButtonRef = useRef<HTMLButtonElement>(null);
 
  const { isLoggedIn, logout } = useAuth();
 
 
   // Close dropdown on outside click
-    useEffect(() => {
-        const handleClickOutside = (event: MouseEvent) => {
-          if (
-            dropdownRef.current &&
-            !dropdownRef.current.contains(event.target as Node)
-          ) {
-            setIsDropdownOpen(false);
-          }
+useEffect(() => {
+  const handleClickOutside = (event: MouseEvent) => {
+    const target = event.target as Node;
 
-          if (
-            mobileMenuRef.current &&
-            !mobileMenuRef.current.contains(event.target as Node)
-          ) {
-            setIsMobileMenuOpen(false);
-          }
-        };
+    setTimeout(() => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(target)
+      ) {
+        setIsDropdownOpen(false);
+      }
 
-        document.addEventListener('mousedown', handleClickOutside);
-        return () => document.removeEventListener('mousedown', handleClickOutside);
-      }, []);
+      if (
+        mobileMenuRef.current &&
+        !mobileMenuRef.current.contains(target) &&
+        mobileMenuButtonRef.current &&
+        !mobileMenuButtonRef.current.contains(target)
+      ) {
+        setIsMobileMenuOpen(false);
+      }
+    }, 0); // Delay to allow the button onClick to fire
+  };
+
+  document.addEventListener('mousedown', handleClickOutside);
+  return () => document.removeEventListener('mousedown', handleClickOutside);
+}, []);
 
   const UserIcon = () =>
     isLoggedIn ? (
@@ -79,19 +86,22 @@ export default function Header() {
         )}
       </div>
     ) : (
-      <Link href="/auth/login" className="links transition">
+      <Link href="/auth/login" className="links responsive-button transition">
         Login / Signup
       </Link>
     );
 
   const NavLinks = () => (
-    <>
+    <div className="flex flex-col md:flex-row gap-3">
       <Link href="/" className="links transition">Home</Link>
       <Link href="/forJobSeeker" className="links transition">For Job Seeker</Link>
       <Link href="/employersTabs" className="links transition">For Employer</Link>
       <Link href="/blog" className="links transition">Blog</Link>
       <Link href="/contactUs" className="links transition">Contact Us</Link>
-    </>
+      <div className="lg:hidden md:hidden sm:flex text-[var(--text-muted)] text-lg">
+            <UserIcon />
+      </div>
+    </div>
   );
 
   return (
@@ -99,8 +109,10 @@ export default function Header() {
       <div className="px-4 py-4 flex justify-between items-center">
         {/* Logo and Icons */}
         <div className="flex items-center space-x-1">
-          <HomeIcon className="h-8 w-8 text-[var(--primary-color)]" />
-          <ChevronRightIcon className="h-6 w-6 mr-4 text-[var(--text-muted)]" />
+          <div className="hidden md:flex items-center space-x-1">
+            <HomeIcon className="h-8 w-8 text-[var(--primary-color)]" />
+            <ChevronRightIcon className="h-6 w-6 mr-4 text-[var(--text-muted)]" />
+          </div>
           <Link href="/" className="flex items-center space-x-2">
             <Image
               src="/logos/MployusRecruitmentLogo.png"
@@ -114,10 +126,9 @@ export default function Header() {
 
         {/* User Icon & Mobile Menu Toggle */}
         <div className="flex items-center space-x-4">
-          <div className="lg:hidden md:hidden sm:flex text-[var(--text-muted)] text-lg">
-            <UserIcon />
-          </div>
+          
           <button
+            ref={mobileMenuButtonRef}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="md:hidden text-[var(--text-muted)]"
             aria-label="Toggle Menu"

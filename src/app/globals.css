@@ -100,14 +100,13 @@
   }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-nunito), sans-serif;
   font-size: 16px;
   font-weight: 400;
   color: var(--text-dark);
   line-height: 1.2;
-  ;
-  
 }
+
 
 h1, h2{
   font-weight: 500;
@@ -190,6 +189,26 @@ p {
   color: #fff;
 }
 
+
+  .responsive-button {
+    all: unset;
+  }
+
+@media (max-width: 767px) {
+  .responsive-button {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease; 
+  }
+
+  .responsive-button:hover {
+    background-color: var(--primary-400);
+  }
+}
 
 .IconButton {
   background-color: var(--primary-100);
