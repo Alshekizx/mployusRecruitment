@@ -9,6 +9,7 @@ import {
   ChevronRightIcon,
 } from '@heroicons/react/24/outline';
 import { useAuth } from '../context/authContext';
+import { usePathname } from 'next/navigation';
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -91,18 +92,26 @@ useEffect(() => {
       </Link>
     );
 
-  const NavLinks = () => (
-    <div className="flex flex-col md:flex-row gap-3">
-      <Link href="/" className="links transition">Home</Link>
-      <Link href="/forJobSeeker" className="links transition">For Job Seeker</Link>
-      <Link href="/employersTabs" className="links transition">For Employer</Link>
-      <Link href="/blog" className="links transition">Blog</Link>
-      <Link href="/contactUs" className="links transition">Contact Us</Link>
-      <div className="lg:hidden md:hidden sm:flex text-[var(--text-muted)] text-lg">
-            <UserIcon />
+  const NavLinks = () => {
+    const pathname = usePathname();
+      const isActive = (path: string) => pathname === path;
+
+    const linkClass = (path: string) =>
+    `  transition pb-1 ${isActive(path) ? 'text-[var(--primary-color)]  border-b-2 border-[var(--primary-color)] ' : ''}`;
+
+    return (
+      <div className="flex flex-col md:flex-row gap-3">
+        <Link href="/" className={linkClass('/')} >Home</Link>
+        <Link href="/forJobSeeker" className={linkClass('/forJobSeeker')} >For Job Seeker</Link>
+        <Link href="/employersTabs" className={linkClass('/employersTabs')} >For Employer</Link>
+        <Link href="/blog" className={linkClass('/blog')} >Blog</Link>
+        <Link href="/contactUs" className={linkClass('/contactUs')} >Contact Us</Link>
+        <div className="lg:hidden md:hidden sm:flex text-[var(--text-muted)] text-lg">
+          <UserIcon />
+        </div>
       </div>
-    </div>
   );
+}
 
   return (
     <header className="bg-[var(--header-color)] text-[var(--text-dark)] border-b border-[var(--border-color)] fixed top-0 w-full z-50">

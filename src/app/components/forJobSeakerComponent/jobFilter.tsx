@@ -80,6 +80,7 @@ const JobFilter2: React.FC<JobFilter2Props> = ({
         value={filters[key] || ''}
         onChange={(e) => handleSelect(key, e.target.value)}
         className="block w-full border border-[var(--secondary-200)] px-6 py-4 custom-ring-color"
+        style={{borderWidth: '1px'}}
       >
         <option value="">{label}</option>
         {options.map((opt) => (
