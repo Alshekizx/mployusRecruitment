@@ -15,7 +15,7 @@ interface JobCardProps {
 const JobCard: React.FC<JobCardProps> = ({ jobs, onJobClick, currentPage, totalPages, onPageChange }) => {
   const primaryColor = "var(--primary-color)";
   const primaryLight = "var(--primary-200)";
-  const primaryBorder = "var(--primary-300)";
+  const primaryBorder = "var(--primary-color)";
 
   const jobsPerPage = 10;
   const paginatedJobs = jobs.slice(
@@ -30,7 +30,7 @@ const JobCard: React.FC<JobCardProps> = ({ jobs, onJobClick, currentPage, totalP
       {paginatedJobs.map((job: Job) => (
         <div
           key={job.jobId}
-          className="group flex flex-col space-y-2 rounded-lg border-l-4 p-6 transition duration-300"
+          className="group flex flex-col space-y-2 rounded-lg border-l-2 p-6 transition duration-300"
           style={{
             borderLeftColor: primaryBorder,
             backgroundColor: "var(--secondary-100)",

@@ -42,7 +42,7 @@ export const JobFilter: React.FC<JobFilterProps> = ({
     <div
       className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4 p-4 rounded-lg border"
       style={{
-        backgroundColor: 'var(--secondary-100)',
+        backgroundColor: '#eeeeee',
         borderColor: 'var(--secondary-200)',
       }}
     >
