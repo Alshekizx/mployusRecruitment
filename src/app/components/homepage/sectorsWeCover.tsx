@@ -3,36 +3,44 @@ import Image from "next/image";
 export default function SectorsWeCover() {
   const services = [
     {
-      title: "Retail",
-      bgImage: "/images/retail.jpg",
+      title: "ICT",
+      detail: "We support tech-driven businesses by recruiting top IT talent, including software developers, network engineers, IT support specialists, and data analysts etc.",
+      bgImage: "/images/ICT.png",
     },
     {
       title: "Hospitality",
-      bgImage: "/images/hospitality.jpg",
+      detail: "We recruit for key hospitality roles such as chefs, waiting staff, kitchen porters, front-of-house staff, and housekeeping—ensuring candidates match your service standards ",
+      bgImage: "/images/Hospitality.png",
     },
     {
       title: "Healthcare",
-      bgImage: "/images/healthcare.jpg",
+      detail: "We support healthcare organisations and facilities by streamlining recruitment for critical roles such as, support workers, medical administrators etc.",
+      bgImage: "/images/Healthcare.png",
     },
     {
-      title: "Education",
-      bgImage: "/images/education.jpg",
+      title: "Business Support",
+      detail: "We support business operations by streamlining recruitment for  roles such as administrative assistants, office managers, customer service agents, executive support staff and more.",
+      bgImage: "/images/BusinessSupport.png",
     },
     {
       title: "Construction",
-      bgImage: "/images/construction.jpg",
+      detail: "We support construction companies by sourcing skilled professionals such as site managers, general labourers, electricians, quantity surveyors and other related professions.",
+      bgImage: "/images/Construction.png",
     },
     {
-      title: "IT & Tech",
-      bgImage: "/images/tech.jpg",
+      title: "Life Sciences",
+      detail: "We help life sciences organisations streamline recruitment for critical roles such as laboratory technicians, research scientists, clinical trial coordinators among others. ",
+      bgImage: "/images/LifeSciences.png",
     },
     {
       title: "Logistics",
-      bgImage: "/images/logistics.jpg",
+      detail: "We recruit for essential logistics roles including warehouse operatives, forklift drivers, pickers and packers, delivery drivers, transport coordinators, and shift supervisors and more.",
+      bgImage: "/images/Logistics.png",
     },
     {
       title: "Finance",
-      bgImage: "/images/finance.jpg",
+      detail: "We recruit for finance roles including accountants, bookkeepers, payroll & financial analysts, credit controllers etc—ensuring each candidate aligns with your business goals ",
+      bgImage: "/images/Finance.png",
     },
   ];
 
@@ -50,7 +58,7 @@ export default function SectorsWeCover() {
           {services.map((service, index) => (
             <div
               key={index}
-              className="relative rounded-lg overflow-hidden min-w-[300px] h-[400px] "
+              className="relative rounded-lg overflow-hidden min-w-[300px] h-[400px] group"
             >
               <Image
                 src={service.bgImage}
@@ -59,9 +67,12 @@ export default function SectorsWeCover() {
                 objectFit="cover"
                 className="z-0"
               />
-              <div className="absolute flex flex-col justify-center items-center inset-0 bg-gradient-to-br from-black/50 to-black/20 z-10">
-                <h3 className="text-white text-center text-xl font-semibold">{service.title}</h3>
-                </div>
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black/60 z-10 flex flex-col justify-end p-4 transition-all duration-300 group-hover:bg-black/60">
+                <h3 className="text-white  text-xl font-semibold">{service.title}</h3>
+                <p className="text-white  mt-2 hidden group-hover:block  duration-300">
+                  {service.detail}
+                </p>
+              </div>
             </div>
           ))}
         </div>

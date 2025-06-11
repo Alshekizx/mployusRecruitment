@@ -292,7 +292,7 @@ p {
 
 .containerDiv{
   padding: 2rem 5rem;
-  min-height: 90vh;
+  min-height: 50vh;
   width: 100%;
   
 }
@@ -348,6 +348,7 @@ p {
   --tw-ring-color: var(--primary-color);
   outline: none;
   background-color: white;
+  border: solid 2px var(--secondary-200);
  
 }
 
