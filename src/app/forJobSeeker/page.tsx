@@ -7,6 +7,7 @@ import JobCard from "../components/forJobSeakerComponent/jobCard";
 import JobApplicationDetail from "../components/forJobSeakerComponent/jobApplicationDetails";
 import type { FilterOptions } from "../components/forJobSeakerComponent/jobFilter"; 
 import StickyBox from 'react-sticky-box';
+import CountryFilter from "../components/forJobSeakerComponent/CountryFilter";
 
 const jobTypeOptions = Array.from(new Set(sampleJobs.map(job => job.jobType))).map(value => ({
   label: value,
@@ -26,19 +27,22 @@ const industryOptions = Array.from(new Set(sampleJobs.map(job => job.jobSector))
 
 
 export default function ForJobSeeker() {
+   const [selectedCountry, setSelectedCountry] = useState<string>("All");
   const [selectedJob, setSelectedJob] = useState<Job | null>(null);
   const [filters, setFilters] = useState<FilterOptions>({});
   const [currentPage, setCurrentPage] = useState(1);
   const jobsPerPage = 10;
+  const countries = [...new Set(sampleJobs.map((job) => job.country))];
  
   
 
 
   // Filtering logic
-    const filteredJobs = sampleJobs.filter(job =>
+const filteredJobs = sampleJobs.filter(job =>
   (!filters.jobType || job.jobType === filters.jobType) &&
   (!filters.workModel || job.workType === filters.workModel) &&
-  (!filters.industry || job.jobSector === filters.industry)
+  (!filters.industry || job.jobSector === filters.industry) &&
+  (selectedCountry === "All" || job.country === selectedCountry)
 );
 
 const totalPages = Math.ceil(filteredJobs.length / jobsPerPage);
@@ -46,7 +50,6 @@ const totalPages = Math.ceil(filteredJobs.length / jobsPerPage);
     <div className="containerDiv">
       <div className="pt-20 flex flex-col gap-16">
         <div className="flex flex-col gap-6" >
-        <p>Find Available Vacancy</p>
       <JobFilter
         filters={{
           jobType: filters.jobType,
@@ -68,8 +71,16 @@ const totalPages = Math.ceil(filteredJobs.length / jobsPerPage);
 
       </div>
 
+      <div className="">
+        <CountryFilter
+          selectedCountry={selectedCountry}
+          onChange={setSelectedCountry}
+          countries={countries}
+        />
+      </div>
+
         <div className="flex flex-row gap-10 min-h-[1000px]">
-          <div className="hidden lg:block" style={{ width: '350px' }}>
+          <div className="hidden lg:block w-1/3" >
             <StickyBox offsetTop={40} offsetBottom={0}>
               <div>
                 <JobFilter2
@@ -82,7 +93,7 @@ const totalPages = Math.ceil(filteredJobs.length / jobsPerPage);
           </div>
 
 
-          <div className="w-full">
+          <div className="w-full lg:w-2/3">
             {selectedJob ? (
               <JobApplicationDetail
                 job={selectedJob}
