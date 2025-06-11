@@ -227,12 +227,12 @@ const stepIndicator = (current: number) => {
             </div>
             )}
 
-            <div className="flex justify-between mt-6">
-              <button onClick={prevStep} className="inverseButton">Back</button>
+            <div className="flex justify-between mt-6 gap-4">
+              <button onClick={prevStep} className="inverseButton w-1/2 " style={{color: 'var(--text-dark)', backgroundColor: 'var(--secondary-200)'}}>Back</button>
               {step < 3 ? (
-                <button onClick={nextStep} className="button">Next</button>
+                <button onClick={nextStep} className="button w-1/2 ">Next</button>
               ) : (
-                <button className="button">Submit</button>
+                <button className="button w-1/2">Submit</button>
               )}
             </div>
           </motion.div>
