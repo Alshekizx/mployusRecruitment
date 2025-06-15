@@ -6,7 +6,7 @@ import { FaLinkedin, FaTwitter } from 'react-icons/fa';
 
 const Footer = () => {
   return (
-    <footer className=" containerDiv bg-[#810161] text-white pt-12 pb-8 px-4"
+    <footer className="  bg-[#810161] flex flex-col items-center text-white pt-12 pb-8 px-4"
       style={{
     backgroundImage: `url('/images/Patterns1.png'), url('/images/Patterns2.png')`,
       backgroundPosition: 'left top, right bottom',
@@ -14,16 +14,17 @@ const Footer = () => {
       backgroundSize: 'auto 100%, auto 100%',
     }}
     >
+      <div className='containerDiv w-full'>
 
      <div className="flex lg:flex-row flex-col justify-between item-center gap-4 mb-10">
      <div className="w-60 h-20 relative">
-    <Image
-      src="/logos/WhiteMployusRecruitmentLogo2.png"
-      alt="MployUs Logo"
-      fill
-      className="object-contain"
-    />
-  </div>
+      <Image
+        src="/logos/WhiteMployusRecruitmentLogo2.png"
+        alt="MployUs Logo"
+        fill
+        className="object-contain"
+      />
+    </div>
           
           <div className="">
             <p className="" style={{color:'white' }}>Subscribe to our new letters</p>
@@ -153,6 +154,7 @@ const Footer = () => {
           Registered in the Republic of Ireland. Registration Number: 734222. United Kingdom:
           Mployus Personnel Services Limited. Registration number: 15628375
         </span>
+      </div>
       </div>
     </footer>
   );

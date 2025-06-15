@@ -20,7 +20,7 @@ const ContactUs = () => {
       </div>
 
       
-    <div className="max-w-6xl flex flex-col gap-10 w-full bg-[var(--primary-100)] rounded-xl  p-8 md:p-12 containerDiv ">
+    <div className="max-w-[1400px] flex flex-col gap-10 w-full bg-[var(--primary-100)] rounded-xl m-6  p-8 md:p-12 containerDiv ">
         
         <div>
             <p className=" font-semibold text-center  " style={{color:"var(--primary-color)" ,fontSize:"25px"}}>

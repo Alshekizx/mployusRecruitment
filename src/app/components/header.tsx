@@ -114,7 +114,8 @@ useEffect(() => {
 }
 
   return (
-    <header className="bg-[var(--header-color)] text-[var(--text-dark)] border-b border-[var(--border-color)] fixed top-0 w-full z-50">
+    <header className="bg-[var(--header-color)] flex flex-col items-center text-[var(--text-dark)] border-b border-[var(--border-color)] fixed top-0 w-full z-50">
+      <div className='max-w-[1400px] w-full'>
       <div className="px-4 py-4 flex justify-between items-center">
         {/* Logo and Icons */}
         <div className="flex items-center space-x-1">
@@ -166,6 +167,7 @@ useEffect(() => {
           <NavLinks />
         </div>
       )}
+      </div>
     </header>
    
   );

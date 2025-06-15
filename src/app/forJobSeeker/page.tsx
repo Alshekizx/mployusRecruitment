@@ -47,8 +47,8 @@ const filteredJobs = sampleJobs.filter(job =>
 
 const totalPages = Math.ceil(filteredJobs.length / jobsPerPage);
   return (
-    <div className="containerDiv">
-      <div className="pt-20 flex flex-col gap-16">
+    <div className=" flex flex-col items-center pt-20 ">
+      <div className="containerDiv flex flex-col gap-16">
         <div className="flex flex-col gap-6" >
       <JobFilter
         filters={{
