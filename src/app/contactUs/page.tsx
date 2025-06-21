@@ -60,7 +60,7 @@ const ContactUs = () => {
         {/* Hero illustration */}
         <div className="relative w-full max-w-sm lg:max-w-md justify-self-end">
           <Image
-            src="/images/contact-illustration.png" /* replace with your asset */
+            src="/images/Questions.png" /* replace with your asset */
             alt="Illustration of devices showing messages"
             width={500}
             height={400}
