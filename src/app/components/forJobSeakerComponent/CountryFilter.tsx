@@ -38,7 +38,7 @@ const CountryFilter: React.FC<CountryFilterProps> = ({
   return (
     <div className="flex flex-col gap-4 w-full">
       {isShowLabel && (
-        <span className="text-md font-medium">Select Country:</span>
+        <span className="p111 font-medium">Select Country:</span>
       )}
       <div className="flex flex-wrap justify-between gap-3">
         <button
@@ -77,7 +77,7 @@ const CountryFilter: React.FC<CountryFilterProps> = ({
                   />
                 </div>
               ) : (
-                <span className="w-6 h-4 inline-block bg-gray-300 rounded-sm" />
+                <span className="w-6 h-4 inline-block bg-gray-300 rounded-sm text-[19px]" />
               )}
               {country}
             </button>

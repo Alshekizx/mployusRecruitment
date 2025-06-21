@@ -63,14 +63,14 @@ const JobCard: React.FC<JobCardProps> = ({ jobs, onJobClick, currentPage, totalP
         >
           <div className="flex justify-between items-start ">
             <p
-              className="text-lg font-bold"
+              className=""
               style={{ color: primaryColor }}
               data-role="heading"
             >
               {job.positionName}
             </p>
             <span
-              className=""
+              className="p111"
               style={{ color: primaryLight }}
               data-role="id"
             >
@@ -80,15 +80,15 @@ const JobCard: React.FC<JobCardProps> = ({ jobs, onJobClick, currentPage, totalP
 
           <div className="flex items-center gap-2">
             <MapPinIcon className="h-4 w-4" style={{ color: primaryLight }} />
-            <span>{job.location}, {job.country}</span>
-            <span className="mx-2">•</span>
-            <span>{job.workType}</span>
+            <span className="p111">{job.location}, {job.country}</span>
+            <span className="mx-2 p111">•</span>
+            <span className="p111">{job.workType}</span>
           </div>
 
-          <p>{job.jobDescription}</p>
+          <p  className="p111">{job.jobDescription}</p>
 
           <div
-            className=""
+             className="p111"
             data-role="job-type"
             style={{ color: primaryColor, marginTop: "10px" }}
           >
@@ -104,9 +104,9 @@ const JobCard: React.FC<JobCardProps> = ({ jobs, onJobClick, currentPage, totalP
       <button
         key={pageNum}
         onClick={() => onPageChange(pageNum)}
-        className={`w-10 h-10 border text-sm font-medium ${
+        className={`w-10 h-10 border  className="p111" text-sm font-medium ${
           currentPage === pageNum
-            ? 'bg-[var(--primary-color)] text-white'
+            ? 'bg-[var(--primary-color)] text-white  className=""'
             : 'bg-[var(--primary-100)] text-[var(--primary-color)]'
         }`}
       >

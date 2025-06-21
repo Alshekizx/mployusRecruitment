@@ -79,7 +79,7 @@ const JobFilter2: React.FC<JobFilter2Props> = ({
       <select
         value={filters[key] || ''}
         onChange={(e) => handleSelect(key, e.target.value)}
-        className="block w-full border border-[var(--secondary-200)] px-6 py-4 custom-ring-color"
+        className="block w-full p111 border border-[var(--secondary-200)] px-6 py-4 custom-ring-color"
         style={{borderWidth: '1px'}}
       >
         <option value="">{label}</option>
@@ -92,7 +92,7 @@ const JobFilter2: React.FC<JobFilter2Props> = ({
 
   return (
     <div className="w-full flex flex-col gap-6">
-      <p className="font-medium">Filter Applied</p>
+      <p className="font-medium p111">Filter Applied</p>
 
       {/* Tags */}
       <div className='rounded-lg border border-[var(--primary-200)] p-6 bg-[var(--primary-100)]'>
@@ -101,7 +101,7 @@ const JobFilter2: React.FC<JobFilter2Props> = ({
             value ? (
               <span
                 key={key}
-                className="rounded-full bg-white border border-pink-100 text-gray-600 text-xs px-3 py-1"
+                className="rounded-full bg-white border border-pink-100 text-gray-600 text-[16px] px-3 py-1"
               >
                 {`${key.charAt(0).toUpperCase() + key.slice(1)}: ${value}`}
               </span>
@@ -111,7 +111,7 @@ const JobFilter2: React.FC<JobFilter2Props> = ({
 
         <button
           onClick={resetFilters}
-          className="mb-4 w-full rounded-md border border-pink-500 text-pink-600 py-2 text-sm font-medium hover:bg-pink-100 transition"
+          className="mb-4 w-full p11 rounded-md border border-pink-500 text-pink-600 py-2 text-sm font-medium hover:bg-pink-100 transition"
         >
           Reset Filter
         </button>

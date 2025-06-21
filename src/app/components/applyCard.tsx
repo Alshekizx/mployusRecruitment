@@ -58,29 +58,30 @@ const ApplySection: React.FC<JobCardProps> = ({ jobs, filterApplied = null }) =>
           }}
         >
           <div className="flex justify-between items-start">
-            <p className="text-lg font-bold" style={{ color: primaryColor }} data-role="heading">
+            <p className="p1 font-bold" style={{ color: primaryColor }} data-role="heading">
               {job.positionName}
             </p>
-            <span style={{ color: primaryLight }} data-role="id">
+            <span className="p1111 "style={{ color: primaryLight }} data-role="id">
               {job.jobId}
             </span>
           </div>
 
           <div className="flex items-center gap-2">
             <MapPinIcon className="h-4 w-4" style={{ color: primaryLight }} />
-            <span>{job.location}, {job.country}</span>
-            <span className="mx-2">•</span>
-            <span>{job.workType}</span>
+            <span className="p1111 " style={{color: primaryColor}}>{job.location}, {job.country}</span>
+            
           </div>
 
-          <p>{job.jobDescription}</p>
+          <p className=" p1111">{job.jobDescription}</p>
 
           <div
-            className=""
+            className="flex"
             data-role="job-type"
-            style={{ color: primaryColor, marginTop: "10px" }}
+            style={{ marginTop: "10px" }}
           >
-            {job.jobType}
+            {job.jobType} 
+            <span className="mx-2 p1111">•</span>
+            <span className="mx-2 p1111">{job.workType}</span>
           </div>
         </div>
       ))}

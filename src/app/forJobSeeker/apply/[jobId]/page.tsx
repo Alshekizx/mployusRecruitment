@@ -32,12 +32,12 @@ const ApplyPage = () => {
   }
 
   return (
-    <div className="max-w-2xl mx-auto px-4 py-20 space-y-8">
+    <div className="max-w-2xl mx-auto px-4 py-36 space-y-8">
       {/* Back Icon and Title */}
       <div className="flex items-center gap-2">
 
         <Link href="/forJobSeeker" className="IconButton"> 
-        <ArrowLeftIcon className="w-5 h-5 text-[--color-primary]" />
+        <ArrowLeftIcon className="w-5 h-5 text-[var(--primary-400)]" />
         </Link>
         <p className="text-lg font-medium">Apply</p>
       </div>
@@ -52,16 +52,16 @@ const ApplyPage = () => {
 
       {/* Resume Upload */}
       <div className="space-y-2">
-        <label className="text-[--color-text] font-medium">Upload Your Resume</label>
+        <label className="text-[var(--primary-color)] p1  font-medium">Upload Your Resume</label>
         <div className="border border-dashed border-[--color-border] rounded-lg p-4 text-center cursor-pointer hover:border-[--color-primary]">
           <input
             type="file"
             id="resumeUpload"
             accept=".pdf"
             onChange={(e) => handleFileChange(e, setResumeName)}
-            className="hidden"
+            className="hidden p1 "
           />
-          <label htmlFor="resumeUpload" className="flex items-center justify-center gap-2 text-[--color-primary] font-medium cursor-pointer">
+          <label htmlFor="resumeUpload" className="p1 flex items-center justify-center gap-2 text-[var(--primary-400)] font-medium cursor-pointer">
             <DocumentArrowUpIcon className="w-5 h-5" />
             {resumeName ? resumeName : "Upload resume"}
           </label>
@@ -70,8 +70,8 @@ const ApplyPage = () => {
 
       {/* Cover Letter Upload */}
       <div className="space-y-2">
-        <label className="text-[--color-text] font-medium">
-          Upload Cover Letter <span className="text-sm text-[--color-text-muted]">(optional)</span>
+        <label className=" p1 text-[var(--primary-color)] font-medium">
+          Upload Cover Letter <span className=" p1 text-sm text-[--color-text-muted]">(optional)</span>
         </label>
         <div className="border border-dashed border-[--color-border] rounded-lg p-4 text-center cursor-pointer hover:border-[--color-primary]">
           <input
@@ -79,9 +79,9 @@ const ApplyPage = () => {
             id="coverLetterUpload"
             accept=".pdf"
             onChange={(e) => handleFileChange(e, setCoverLetterName)}
-            className="hidden"
+            className="hidden p1 text-[var(--primary-400)]"
           />
-          <label htmlFor="coverLetterUpload" className="flex items-center justify-center gap-2 text-[--color-primary] font-medium cursor-pointer">
+          <label htmlFor="coverLetterUpload" className="p1 flex items-center justify-center gap-2 text-[var(--primary-400)] font-medium cursor-pointer">
             <DocumentArrowUpIcon className="w-5 h-5" />
             {coverLetterName ? coverLetterName : "Upload cover letter"}
           </label>

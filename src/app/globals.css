@@ -32,38 +32,7 @@
 }
 
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-  --color-text: var(--text-dark);
-  --color-text-muted: var(--text-muted);
-  --color-card-bg: var(--card-bg);
-  --color-card-trans: var(--card-Trans);
-  --color-border: var(--border-color);
 
-  --color-header: var(--header-color);
-  
-  /* Primary Colors */
-  --color-primary: var(--primary-color);
-  --color-primary-100: var(--primary-100);
-  --color-primary-200: var(--primary-200);
-  --color-primary-300: var(--primary-300);
-  --color-primary-400: var(--primary-400);
-  --color-primary-500: var(--primary-color);
-  --color-primaryTrans: var(--primaryTrans-color);
-
-  /* Secondary Colors */
-  --color-secondary: var(--secondary-color);
-  --color-secondary-100: var(--secondary-100);
-  --color-secondary-200: var(--secondary-200);
-  --color-secondary-300: var(--secondary-300);
-  --color-secondary-400: var(--secondary-400);
-  --color-secondary-500: var(--secondary-color);
-  --color-accent: var(--accent-color);
- 
-}
 
 @media (prefers-color-scheme: dark) {
  :root {
@@ -125,7 +94,7 @@ h3 {
 }
 
 .h33{
-  font-size: 30px; 
+  font-size: 30px;
 }
 
 h4{
@@ -202,6 +171,22 @@ p {
 }
 
 .inverseButton:hover {
+  background-color: var(--primary-400);
+  color: #fff;
+}
+
+.inverseButton2 {
+  border: solid 1.5px var(--primary-color);
+  border-radius: 5px;
+  color: var(--primary-color);
+  padding: 0.75rem 1.5rem;
+ 
+  cursor: pointer;
+ 
+  transition: background-color 0.3s ease;
+}
+
+.inverseButton2:hover {
   background-color: var(--primary-400);
   color: #fff;
 }

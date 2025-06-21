@@ -47,9 +47,10 @@ const filteredJobs = sampleJobs.filter(job =>
 
 const totalPages = Math.ceil(filteredJobs.length / jobsPerPage);
   return (
-    <div className=" flex flex-col items-center pt-20 ">
+    <div className=" flex flex-col items-center pt-30 ">
       <div className="containerDiv flex flex-col gap-16">
-        <div className="flex flex-col gap-6" >
+        <div className="flex flex-col gap-6 text-[var(--text-muted)]" >
+          <p className="mb-3">Find Available Vacancy</p>
       <JobFilter
         filters={{
           jobType: filters.jobType,
@@ -81,13 +82,15 @@ const totalPages = Math.ceil(filteredJobs.length / jobsPerPage);
 
         <div className="flex flex-row gap-10 min-h-[1000px]">
           <div className="hidden lg:block w-1/3" >
-            <StickyBox offsetTop={40} offsetBottom={0}>
-              <div>
+            <StickyBox offsetTop={120} offsetBottom={0}>
+              <div className="overflow-y-auto scrollbar-hide h-[520px]">
+              <div className="h-full">
                 <JobFilter2
                   filters={filters}
                   sampleJobs={sampleJobs}
                   onFilterChange={setFilters}
                 />
+              </div>
               </div>
             </StickyBox>
           </div>
