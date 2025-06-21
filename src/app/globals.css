@@ -109,28 +109,45 @@ body {
 
 
 h1, h2{
-  font-weight: 500;
   line-height: 1.2;
-  color: var(--text-dark);
 }
 
 h1 {
-  font-size: 3rem; /* Increased from 2.5rem */
+  font-size: 55px; /* Increased from 2.5rem */
 }
 
 h2 {
-  font-size: 2.5rem; /* Increased from 2rem */
-  color: var(--primary-color);
+  font-size:44px; /* Increased from 2rem */
 }
 
 h3 {
-  font-size: 2rem; 
-   font-weight: 400;
+  font-size: 34px; 
+}
+
+.h33{
+  font-size: 30px; 
+}
+
+h4{
+   font-size: 28px; 
 }
 
 p {
-  font-size: 1.125rem; /* Increased from 1rem */
+  font-size: 24px; /* Increased from 1rem */
 }
+.p1{
+  font-size: 22px;
+}
+.p11{
+  font-size: 20px;
+}
+.p111{
+  font-size: 18px;
+}
+.p1111{
+  font-size: 14px;
+}
+
  .links{
   color: var(--text-muted);
   text-decoration: none;

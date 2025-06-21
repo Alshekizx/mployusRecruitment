@@ -74,7 +74,7 @@ export default function SectorsWeCover() {
             return (
               <div
                 key={index}
-                className="relative rounded-lg overflow-hidden min-w-[300px] h-[400px] group cursor-pointer"
+                className="relative rounded-lg overflow-hidden min-w-[360px] h-[661px] group cursor-pointer"
                 onClick={() =>
                   setActiveIndex((prev) => (prev === index ? null : index))
                 }
@@ -87,9 +87,9 @@ export default function SectorsWeCover() {
                   className="z-0"
                 />
                 <div className="absolute inset-0 z-10 bg-gradient-to-b from-transparent via-black/20 to-black/60 group-hover:bg-black/60 flex flex-col justify-end p-4 transition-all duration-300">
-                  <h3 className="text-white text-xl font-semibold">{service.title}</h3>
+                  <h1 className="text-white text-xl font-semibold">{service.title}</h1>
                   <p
-                    className={`text-white mt-2 transition-opacity duration-300 ${
+                    className={`text-white mt-2 transition-opacity duration-300 p11${
                       isActive ? "opacity-100 block" : "opacity-0 hidden group-hover:block group-hover:opacity-100"
                     }`}
                   >

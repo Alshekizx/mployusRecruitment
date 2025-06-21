@@ -26,7 +26,7 @@ export default function WhatWeOffer() {
   return (
     <div className="containerDiv flex flex-col items-center justify-center  gap-20">
       <div className="text-center w-full ">
-        <h3 className="text-[var(--primary-color)]">WHAT WE OFFER</h3>
+        <h2 className="text-[var(--primary-color)]">WHAT WE OFFER</h2>
         <p className="text-[var(--text-muted)]">Solutions designed to take your recruitment to the next level</p>
       </div>
 
@@ -34,7 +34,7 @@ export default function WhatWeOffer() {
         {services.map((service, index) => (
           <div key={index} className="  p-5">
             <p className="text-[var(--primary-color)]" >{service.title}</p>
-            <p className="text-[var(--text-muted)]">{service.description}</p>
+            <p className="p1 text-[var(--text-muted)]">{service.description}</p>
           </div>
         ))}
       </div>

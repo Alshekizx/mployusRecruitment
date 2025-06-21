@@ -5,7 +5,6 @@ import Image from 'next/image';
 import { useState, useRef, useEffect } from 'react';
 import {
   Bars3Icon,
-  HomeIcon,
   ChevronRightIcon,
 } from '@heroicons/react/24/outline';
 import { useAuth } from '../context/authContext';
@@ -61,7 +60,7 @@ useEffect(() => {
             alt="User Icon"
             width={100}
             height={100}
-            className="object-cover w-full h-full"
+            className=" w-full h-full"
           />
         </button>
         {isDropdownOpen && (
@@ -87,7 +86,7 @@ useEffect(() => {
         )}
       </div>
     ) : (
-      <Link href="/auth/login" className="links responsive-button transition cursor-pointer">
+      <Link href="/auth/login" className="links responsive-button transition cursor-pointer p111">
         Login / Signup
       </Link>
     );
@@ -100,12 +99,12 @@ useEffect(() => {
     `  transition pb-1 ${isActive(path) ? 'text-[var(--primary-color)]  border-b-2 border-[var(--primary-color)] ' : ''}`;
 
     return (
-      <div className="flex flex-col md:flex-row gap-3">
-        <Link href="/" className={linkClass('/')} >Home</Link>
-        <Link href="/forJobSeeker" className={linkClass('/forJobSeeker')} >For Job Seeker</Link>
-        <Link href="/employersTabs" className={linkClass('/employersTabs')} >For Employer</Link>
-        <Link href="/blog" className={linkClass('/blog')} >Blog</Link>
-        <Link href="/contactUs" className={linkClass('/contactUs')} >Contact Us</Link>
+      <div className="flex flex-col md:flex-row gap-4">
+        <Link href="/" className={linkClass('/')} ><p className='p111'>Home</p></Link>
+        <Link href="/forJobSeeker" className={linkClass('/forJobSeeker')} ><p className='p111'>For Job Seeker</p></Link>
+        <Link href="/employersTabs" className={linkClass('/employersTabs')} ><p className='p111'>For Employer</p></Link>
+        <Link href="/blog" className={linkClass('/blog')} ><p className='p111'>Blog</p></Link>
+        <Link href="/contactUs" className={linkClass('/contactUs')} ><p className='p111'>Contact Us</p></Link>
         <div className="lg:hidden md:hidden sm:flex text-[var(--text-muted)] text-lg">
           <UserIcon />
         </div>
@@ -114,21 +113,27 @@ useEffect(() => {
 }
 
   return (
-    <header className="bg-[var(--header-color)] flex flex-col items-center text-[var(--text-dark)] border-b border-[var(--border-color)] fixed top-0 w-full z-50">
-      <div className='max-w-[1400px] w-full'>
-      <div className="px-4 py-4 flex justify-between items-center">
+     <header className="bg-[var(--header-color)] flex flex-col items-center text-[var(--text-dark)] border-b border-[var(--border-color)] fixed top-0 w-full z-50">
+      <div className=' max-w-[1400px] w-full  '>
+      <div className="py-5 px-4 lg:px-10 flex justify-between items-center">
         {/* Logo and Icons */}
         <div className="flex items-center space-x-1">
-          <div className="hidden md:flex items-center space-x-1">
-            <HomeIcon className="h-8 w-8 text-[var(--primary-color)]" />
-            <ChevronRightIcon className="h-6 w-6 mr-4 text-[var(--text-muted)]" />
-          </div>
+          <div className='hidden md:flex flex-row gap-2 items-center'>
+          <Image
+              src="/images/home2.png"
+              alt="Logo"
+              width={31}
+              height={34}
+              className="h-full"
+            />
+          <ChevronRightIcon className="h-10 w-10  text-[var(--text-muted)]" />
+         </div>
           <Link href="/" className="flex items-center space-x-2">
             <Image
               src="/logos/MployusRecruitmentLogo.png"
               alt="Logo"
-              width={120}
-              height={120}
+              width={186}
+              height={56}
               className="object-contain"
             />
           </Link>

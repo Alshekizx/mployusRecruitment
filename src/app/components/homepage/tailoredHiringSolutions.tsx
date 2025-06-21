@@ -30,7 +30,7 @@ export default function TailoredHiringSolutions() {
   return (
     <div className="containerDiv flex flex-col items-center justify-center  gap-20">
       <div className="text-center w-full max-w-[800px] ">
-        <h3 className="text-[var(--primary-color)]">Tailored hiring solutions to match your business needs</h3>
+        <h2 className="text-[var(--primary-color)]">Tailored hiring solutions to match your business needs</h2>
         <p className="text-[var(--text-muted)] mt-5">Whether you&apos;re scaling quickly or building a long-term team, we connect you with the right talent through flexible and strategic recruitment models.</p>
       </div>
 
@@ -46,8 +46,8 @@ export default function TailoredHiringSolutions() {
               key={index}
               className={`flex flex-col justify-between items-center rounded-lg gap-5 p-5 ${gradientClass}`}
             >
-              <h3 className="text-center w-full max-w-[220px] text-white">{service.title}</h3>
-              <p className="text-center text-white">{service.description}</p>
+              <h3 className="text-center w-full max-w-[220px] h33 text-white">{service.title}</h3>
+              <p className="text-center p11 text-white">{service.description}</p>
               <div className="flex items-center gap-2 border border-white text-white p-2 cursor-pointer hover:bg-white hover:text-black transition">
                 <span>Learn more</span>
                 <ChevronRightIcon className="w-4 h-4" />

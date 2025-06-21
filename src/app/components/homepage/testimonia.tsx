@@ -44,8 +44,8 @@ const Testimonials = () => {
       <div className="flex flex-col lg:flex-row items-stretch justify-between gap-10">
         {/* Left Section */}
         <div className="lg:w-1/2 space-y-6 h-full flex flex-col justify-between">
-          <p className="text-[var(--accent-color)] font-semibold text-sm">Testimonials</p>
-          <h2 className="text-3xl md:text-4xl font-bold text-[var(--text-dark)]"style={{color: "var(--text-dark)"}} >
+          <p className="text-[var(--accent-color)] .h33 font-semibold text-sm">Testimonials</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-[var(--text-dark)]"style={{color: "var(--text-dark)", fontSize:'68px'}} >
             What Our Clients Are Saying About Us
           </h2>
           <p className="text-[var(--text-muted)] text-base leading-relaxed">
@@ -70,10 +70,10 @@ const Testimonials = () => {
 
           <div className="space-y-4">
             <blockquote className="text-lg leading-relaxed italic">
-              “{testimonial.review}”
+              <h3 className="h33">“{testimonial.review}”</h3>
             </blockquote>
             <div>
-              <p className="font-semibold">{testimonial.name}</p>
+              <p className="font-bold">{testimonial.name}</p>
               <p className="text-sm">{testimonial.position}</p>
             </div>
           </div>
