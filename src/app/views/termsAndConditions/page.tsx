@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import HeroSection from '../components/heroSection';
+import HeroSection from '../../components/heroSection';
 
 const termsContent = {
   uk: {

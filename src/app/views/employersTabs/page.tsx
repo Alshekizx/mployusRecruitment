@@ -39,7 +39,7 @@ const stepIndicator = (current: number) => {
 
       {/* Active Progress */}
       <div
-        className="absolute top-4 z-10 h-1 bg-[var(--color-primary)] rounded transition-all duration-300"
+        className="absolute top-4 z-10 h-1 bg-[var(--primary-color)] rounded transition-all duration-300"
         style={{
           left: 'calc(16.6667%)',
           width: `${((current - 1) / 2) * 66.6667}%`,
@@ -53,13 +53,13 @@ const stepIndicator = (current: number) => {
 
           const baseCircle = `w-8 h-8 rounded-full border-2 flex items-center justify-center font-bold transition-all duration-300`;
           const circleState = isActive
-            ? 'bg-[var(--color-primary)] text-white border-[var(--color-primary)]'
+            ? 'bg-[var(--primary-color)] text-white border-[var(--primary-color)]'
             : isCompleted
-            ? 'text-[var(--color-primary)] border-[var(--color-primary)] bg-white'
+            ? 'text-[var(--primary-color)] border-[var(--primary-color)] bg-white'
             : 'text-[var(--secondary-400)] border-[var(--secondary-200)] bg-white';
 
           const textColor = isCompleted
-            ? 'text-[var(--color-primary)]'
+            ? 'text-[var(--primary-color)]'
             : 'text-[var(--color-text-muted)]';
 
           return (

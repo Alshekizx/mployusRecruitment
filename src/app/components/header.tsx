@@ -66,13 +66,13 @@ useEffect(() => {
         {isDropdownOpen && (
           <div className="absolute right-0 mt-2 w-40 bg-[var(--header-color)] border rounded shadow-lg z-50 text-sm">
             <Link
-              href="/myApplications"
+              href="/views/myApplications"
               className="block px-4 py-2 cursor-pointer hover:text-[var(--primary-color)] text-[var(--text-dark)]"
             >
               My Applications
             </Link>
             <Link
-              href="/myProfile"
+              href="/views/myProfile"
               className="block px-4 py-2 cursor-pointer hover:text-[var(--primary-color)] text-[var(--text-dark)]"
             >
               My Profile
@@ -100,11 +100,11 @@ useEffect(() => {
 
     return (
       <div className="flex flex-col md:flex-row gap-4">
-        <Link href="/" className={linkClass('/')} ><p className='p111'>Home</p></Link>
-        <Link href="/forJobSeeker" className={linkClass('/forJobSeeker')} ><p className='p111'>For Job Seeker</p></Link>
-        <Link href="/employersTabs" className={linkClass('/employersTabs')} ><p className='p111'>For Employer</p></Link>
-        <Link href="/blog" className={linkClass('/blog')} ><p className='p111'>Blog</p></Link>
-        <Link href="/contactUs" className={linkClass('/contactUs')} ><p className='p111'>Contact Us</p></Link>
+        <Link href="/views/" className={linkClass('/')} ><p className='p111'>Home</p></Link>
+        <Link href="/views/forJobSeeker" className={linkClass('/views/forJobSeeker')} ><p className='p111'>For Job Seeker</p></Link>
+        <Link href="/views/employersTabs" className={linkClass('/views/employersTabs')} ><p className='p111'>For Employer</p></Link>
+        <Link href="/views/blog" className={linkClass('/views/blog')} ><p className='p111'>Blog</p></Link>
+        <Link href="/views/contactUs" className={linkClass('/views/contactUs')} ><p className='p111'>Contact Us</p></Link>
         <div className="lg:hidden md:hidden sm:flex text-[var(--text-muted)] text-lg">
           <UserIcon />
         </div>
@@ -128,7 +128,7 @@ useEffect(() => {
             />
           <ChevronRightIcon className="h-10 w-10  text-[var(--text-muted)]" />
          </div>
-          <Link href="/" className="flex items-center space-x-2">
+          <Link href="/views/" className="flex items-center space-x-2">
             <Image
               src="/logos/MployusRecruitmentLogo.png"
               alt="Logo"

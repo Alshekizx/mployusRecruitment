@@ -1,8 +1,8 @@
 'use client';
 import React, { useState } from 'react';
-import BlogCard from '../components/blogComponent/blogCard';
+import BlogCard from '../../components/blogComponent/blogCard';
 import { blogData } from './blogSampleData';
-import HeroSection from '../components/heroSection';
+import HeroSection from '../../components/heroSection';
 
 const topFilters = ['All', 'Articles', 'Reports'];
 const sideFilters = [

@@ -12,11 +12,11 @@ const SuccessPage = () => {
   };
 
   const handleCreateProfile = () => {
-    router.push('/create-profile');
+    router.push('/views/create-profile');
   };
 
   const handleMaybeLater = () => {
-    router.push('/');
+    router.push('/views/');
   };
 
   return (
@@ -26,7 +26,7 @@ const SuccessPage = () => {
 
       <div className="space-y-4">
         <button
-          onClick={() => router.push('/myApplications')}
+          onClick={() => router.push('/views/myApplications')}
           className="w-full button"
         >
           View Application

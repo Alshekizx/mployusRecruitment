@@ -1,13 +1,13 @@
 'use client';
 import { useState } from "react";
-import { JobFilter } from "../components/forJobSeakerComponent/topJobFilter";
-import { Job, sampleJobs } from "../components/forJobSeakerComponent/sampleData";
-import JobFilter2 from "../components/forJobSeakerComponent/jobFilter";
-import JobCard from "../components/forJobSeakerComponent/jobCard";
-import JobApplicationDetail from "../components/forJobSeakerComponent/jobApplicationDetails";
-import type { FilterOptions } from "../components/forJobSeakerComponent/jobFilter"; 
+import { JobFilter } from "../../components/forJobSeakerComponent/topJobFilter";
+import { Job, sampleJobs } from "../../components/forJobSeakerComponent/sampleData";
+import JobFilter2 from "../../components/forJobSeakerComponent/jobFilter";
+import JobCard from "../../components/forJobSeakerComponent/jobCard";
+import JobApplicationDetail from "../../components/forJobSeakerComponent/jobApplicationDetails";
+import type { FilterOptions } from "../../components/forJobSeakerComponent/jobFilter"; 
 import StickyBox from 'react-sticky-box';
-import CountryFilter from "../components/forJobSeakerComponent/CountryFilter";
+import CountryFilter from "../../components/forJobSeakerComponent/CountryFilter";
 
 const jobTypeOptions = Array.from(new Set(sampleJobs.map(job => job.jobType))).map(value => ({
   label: value,

@@ -1,12 +1,12 @@
 // myApplication/page.tsx
 import { ArrowLeftIcon } from "@heroicons/react/24/outline";
-import ApplySection from "../components/applyCard";
-import { sampleJobs } from "../components/forJobSeakerComponent/sampleData";
+import ApplySection from "../../components/applyCard";
+import { sampleJobs } from "../../components/forJobSeakerComponent/sampleData";
 import Link from "next/link";
 
 export default function MyApplication() {
   return (
-    <div className="containerDiv flex flex-col items-center" style={{paddingTop:"100px"}}>
+    <div className="containerDiv flex flex-col items-center mx-auto" style={{paddingTop:"150px"}}>
       <div className="flatCard flex flex-col gap-6 ">
      <div className="flex items-center gap-2">
         <Link href="/" className="IconButton"> 
