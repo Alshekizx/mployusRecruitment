@@ -100,7 +100,7 @@ useEffect(() => {
 
     return (
       <div className="flex flex-col md:flex-row gap-4">
-        <Link href="/views/" className={linkClass('/')} ><p className='p111'>Home</p></Link>
+        <Link href="/views/" className={linkClass('/views')} ><p className='p111'>Home</p></Link>
         <Link href="/views/forJobSeeker" className={linkClass('/views/forJobSeeker')} ><p className='p111'>For Job Seeker</p></Link>
         <Link href="/views/employersTabs" className={linkClass('/views/employersTabs')} ><p className='p111'>For Employer</p></Link>
         <Link href="/views/blog" className={linkClass('/views/blog')} ><p className='p111'>Blog</p></Link>
@@ -114,8 +114,8 @@ useEffect(() => {
 
   return (
      <header className="bg-[var(--header-color)] flex flex-col items-center text-[var(--text-dark)] border-b border-[var(--border-color)] fixed top-0 w-full z-50">
-      <div className=' max-w-[1400px] w-full  '>
-      <div className="py-5 px-4 lg:px-10 flex justify-between items-center">
+      <div className=' max-w-[1400px] w-full py-5 '>
+      <div className=" px-[2rem] lg:px-[5rem] flex justify-between items-center">
         {/* Logo and Icons */}
         <div className="flex items-center space-x-1">
           <div className='hidden md:flex flex-row gap-2 items-center'>
@@ -134,7 +134,7 @@ useEffect(() => {
               alt="Logo"
               width={186}
               height={56}
-              className="object-contain"
+              className="h-[56px]"
             />
           </Link>
         </div>
