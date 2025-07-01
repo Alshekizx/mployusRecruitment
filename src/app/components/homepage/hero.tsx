@@ -2,7 +2,8 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <div className="containerDiv flex flex-col lg:flex-row items-center justify-between gap-10">
+    <div className="pt-10">
+         <div className="containerDiv flex flex-col lg:flex-row items-center justify-between gap-10">
       <div className="flex flex-col gap-4 max-w-[719px]">
         <h4 className="text-[var(--primary-color)]">Comprehensive Talent Solutions</h4>
         <h1>
@@ -57,6 +58,7 @@ export default function Hero() {
     priority
   />
 </div>
+    </div>
     </div>
   );
 }
