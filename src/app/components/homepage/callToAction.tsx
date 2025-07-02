@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function CallToAction() {
   return (
@@ -11,7 +12,7 @@ export default function CallToAction() {
     <p className="p11 text-sm sm:text-base lg:text-lg text-white">
       We provide tailor-made solutions for a variety of other HR needs, such as niche & executive recruitment, manpower outsourcing, training, and much more.
     </p>
-    <button className="callToActionButton w-fit text-sm sm:text-base"><p>Contact Us: 0818 900 300</p></button>
+    <Link href="tel:0818900300" className="callToActionButton w-fit text-sm sm:text-base"><p>Contact Us: 0818 900 300</p></Link>
   </div>
 
   {/* Image Section */}

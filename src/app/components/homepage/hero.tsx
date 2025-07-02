@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -21,8 +22,8 @@ export default function Hero() {
         </p>
 
         <div className="flex gap-4 my-6">
-          <button className="button p11">Request Talents</button>
-          <button className="inverseButton p11">Explore Vacancies</button>
+          <Link className="button p11" href="/views/employersTabs">Request Talents</Link>
+          <Link className="inverseButton p11" href="/views/jobSeekersTabs">Explore Vacancies</Link>
         </div>
         <div className="flex flex-row gap-4 text-center text-[var(--text-dark)]">
           <div><h3>120+</h3> <span>Job post</span></div>

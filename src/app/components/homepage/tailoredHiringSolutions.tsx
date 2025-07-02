@@ -1,4 +1,5 @@
 import { ChevronRightIcon } from '@heroicons/react/20/solid';
+import Link from 'next/dist/client/link';
 
 
 export default function TailoredHiringSolutions() {
@@ -49,7 +50,7 @@ export default function TailoredHiringSolutions() {
               <h3 className="text-center w-full max-w-[220px] h33 text-white">{service.title}</h3>
               <p className="text-center p11 text-white">{service.description}</p>
               <div className="flex items-center gap-2 border border-white text-white p-2 cursor-pointer hover:bg-white hover:text-black transition">
-                <span>Learn more</span>
+                <Link href="/views/contactUs"><span>Learn more</span></Link>
                 <ChevronRightIcon className="w-4 h-4" />
               </div>
             </div>
