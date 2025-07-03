@@ -62,11 +62,11 @@ const Footer = () => {
         <div>
           <h4 className="font-semibold mb-4">Our Services</h4>
           <ul className="space-y-2 text-sm">
-            <li>MployUs HR Advice</li>
-            <li>Recruitment Support</li>
-            <li>Locums Provision</li>
-            <li>HR Software & Mobile App</li>
-            <li>Locum Software & Mobile App</li>
+            <li><Link href="https://hr.mployus.ie/views">MployUs HR Advice</Link></li>
+            <li><Link href="/views">Recruitment Support</Link></li>
+            <li><Link href="https://locum.mployus.ie/views">Locums Provision</Link></li>
+            <li><Link href="https://mployus.ie/prices">HR Software & Mobile App</Link></li>
+            <li><Link href="https://mployus.ie/prices">Locum Software & Mobile App</Link></li>
           </ul>
         </div>
 
@@ -74,12 +74,12 @@ const Footer = () => {
         <div>
           <h4 className="font-semibold mb-4">Our Products</h4>
           <ul className="space-y-2 text-sm">
-            <li>MployUs HR Software</li>
-            <li>Recruitment Software</li>
-            <li>MployUs Locums</li>
-            <li>HR Software & Mobile App</li>
-            <li>Locum Software & Mobile App</li>
-            <li>Finance Management Software</li>
+            <li><Link href="https://mployus.ie/hrSoftware">MployUs HR Software</Link></li>
+            <li><Link href="https://mployus.ie/recruitmentSoftware">Recruitment Software</Link></li>
+            <li><Link href="https://locum.mployus.ie/views">MployUs Locums</Link></li>
+            <li><Link href="https://mployus.ie/hrSoftware">HR Software & Mobile App</Link></li>
+            <li><Link href="https://locum.mployus.ie/views">Locum Software & Mobile App</Link></li>
+            <li><Link href="https://mployus.ie/financial">Finance Management Software</Link></li>
           </ul>
         </div>
 

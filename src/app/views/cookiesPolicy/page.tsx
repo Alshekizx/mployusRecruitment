@@ -6,141 +6,118 @@ import Link from 'next/link';
 
 const CookiesPolicy = () => {
   return (
-    <section className="w-full pt-10 min-h-screen flex flex-col items-center justify-start pb-20 ">
+    <section className="w-full pt-20 min-h-screen flex flex-col items-center justify-start pb-20 ">
       {/* Hero Section */}
-      <div className="bg-[var(--primary-color)] relative w-full flex flex-col items-center justify-center h-80 text-white mb-10 card-texture-bg "
-      >
-        <div className="absolute top-16 left-6 flex items-center gap-1 text-sm">
+      <div className="bg-[var(--primary-color)] relative w-full flex flex-col items-center justify-center h-80 text-white mb-10 card-texture-bg">
+        <div className="absolute px-[2rem] lg:px-[5rem] top-16 left-6 flex items-center gap-1 text-sm">
           <Link href="/" className="underline hover:text-gray-300">Home</Link>
           <ChevronRightIcon className="w-4 h-4" />
-          <span>Privacy Policy</span>
+          <span className='p11'>Cookie Policy</span>
         </div>
-        <h3 className="text-3xl font-bold text-center">Cookies Policy</h3>
+        <h3 className="text-3xl font-bold text-center">Cookie Policy</h3>
       </div>
 
       {/* Content */}
       <div className="text-sm containerDiv md:text-base leading-relaxed text-gray-800 space-y-6">
         <section>
-          <h4 className="text-lg font-semibold">Policy Overview</h4>
+          <h3>Cookie Policy</h3>
           <p>
-            At Mployus Ireland, we are committed to being transparent about how we use cookies and similar tracking technologies.
-            This Cookies Policy outlines the types of cookies we use on our website, why we use them, and how you can control or manage your cookie preferences.
-          </p>
-          <p>
-            This Policy forms part of our broader commitment to user privacy and should be read alongside our Privacy Policy. We may update this Policy periodically to reflect changes in our cookie usage or regulatory requirements.
+            This Cookie Policy explains what you can expect when visiting any Mployus website, including www.mployus.co.uk and www.mployus.ie. When you access our sites, we may automatically collect certain information such as standard internet log data and user behaviour patterns. This helps us understand how different areas of our websites are being used, but we do not link this data to any personally identifiable information.
           </p>
         </section>
 
         <section>
-          <h4 className="text-lg font-semibold">What Are Cookies?</h4>
-          <p>
-            Cookies are small text files placed on your device when you visit a website. They help us remember your preferences, enhance your browsing experience, understand how our site is used, and display personalised content or advertisements.
-          </p>
-          <p>
-            Cookies are essential for improving site functionality and providing you with a more tailored and efficient user experience.
-          </p>
+          <h4 className="text-[var(--primary-color)] font-semibold">Use of Cookies and Tracking Technologies</h4>
+          <span className='p11'>
+            When you visit an Mployus website, we may place cookies or similar tracking technologies on your device. These technologies store data about your preferences and interaction with our sites and are used for the reasons outlined below.
+          </span>
+          <span className='p11'>
+            You can manage which categories of cookies you accept by clicking “Cookie Settings.” To consent to all cookies, select “Accept All Cookies” when prompted. Your choices will be applied in accordance with this Cookie Policy.
+          </span>
+          <span className='p11'>
+            If you choose not to accept non-essential cookies, only strictly necessary cookies will be used, which may limit access to some personalised features or services.
+          </span>
         </section>
 
         <section>
-          <h4 className="text-lg font-semibold">Types of Cookies We Use</h4>
-          <p>We use both first-party cookies (set by Mployus.ie) and third-party cookies (set by service providers such as Google) for various purposes. These include:</p>
+          <h4 className="text-[var(--primary-color)] font-semibold">What Are Cookies?</h4>
+          <span className='p11'>
+            Cookies are small text files stored on your device by a website. They serve multiple purposes such as identifying users, saving preferences, and customising content presentation.
+          </span>
+          <span className='p11'>
+            Cookies used by Mployus Group (UK and Ireland) fall into two main categories:
+          </span>
           <ul className="list-disc list-inside space-y-2">
-            <li>
-              <strong>Strictly Necessary Cookies:</strong> Essential for site functionality, such as security, network management, and accessibility. These cannot be disabled via our cookie banner.
-            </li>
-            <li>
-              <strong>Performance Cookies:</strong> Help us understand site usage, which pages are popular, and where improvements are needed. Data is collected anonymously.
-            </li>
-            <li>
-              <strong>Functionality Cookies:</strong> Remember preferences such as language or region to provide more personalized features.
-            </li>
-            <li>
-              <strong>Targeting/Advertising Cookies:</strong> Set by advertising partners to build a profile of your interests and display relevant ads.
-            </li>
+            <li><strong>First-party cookies</strong> – set directly by Mployus websites.</li>
+            <li><strong>Third-party cookies</strong> – set by services or platforms we use; governed by their respective privacy policies.</li>
           </ul>
+          <span className='p11'>
+            To view a full list of cookies used on our websites, visit the “Cookie Settings” link available on all pages.
+          </span>
         </section>
 
         <section>
-          <h4 className="text-lg font-semibold">Other Tracking Technologies</h4>
-          <p>
-            Besides cookies, we use tracking technologies like web beacons (tracking pixels), which help monitor website traffic, measure email campaign success, or determine referral sources. These may depend on cookies to function effectively.
-          </p>
-        </section>
-
-        <section>
-          <h4 className="text-lg font-semibold">Social Media Features</h4>
-          <p>
-            Our website includes features such as Facebook Like and LinkedIn Share buttons. These may collect your IP address and track the page you&lsquo;re visiting. Interactions are governed by the privacy policy of the respective platform.
-          </p>
-        </section>
-
-        <section>
-          <h4 className="text-lg font-semibold">Do Cookies Expire?</h4>
+          <h4 className="text-[var(--primary-color)] font-semibold">Why We Use Cookies</h4>
+          <span className='p11'>Cookies used by Mployus UK and Ireland help us to:</span>
           <ul className="list-disc list-inside space-y-2">
-            <li>
-              <strong>Session Cookies:</strong> Temporary cookies that expire when the browser is closed. They enable seamless navigation without reauthentication.
-            </li>
-            <li>
-              <strong>Persistent Cookies:</strong> Remain on your device until expiry or manual deletion. Some may last up to five years for analytics or advertising purposes.
-            </li>
+            <li>Ensure proper operation and performance of our websites</li>
+            <li>Enable access to key services such as job applications or account features</li>
+            <li>Preserve your cookie consent choices</li>
+            <li>Personalise content and improve user experience</li>
+            <li>Analyse traffic patterns and optimise website functionality</li>
+            <li>Improve accessibility and responsiveness across devices</li>
+          </ul>
+          <span className="">
+            Note: Disabling essential cookies may restrict your ability to fully access or benefit from certain site features.
+          </span>
+        </section>
+
+        <section>
+          <h4 className="text-[var(--primary-color)] font-semibold">Categories of Cookies We Use</h4>
+          <ul className="list-disc list-inside space-y-2">
+            <li><strong>Strictly Necessary Cookies</strong> – Essential for core site functionality (e.g. secure login, job application forms). These cookies do not collect personally identifiable information and expire after each session or shortly thereafter.</li>
+            <li><strong>Performance Cookies</strong> – Help us understand how users interact with our sites through analytics and usage statistics. These cookies are not used for advertising but may be used to test features or optimise performance.</li>
+            <li><strong>Functionality Cookies</strong> – Enhance usability by remembering settings or preferences (e.g. language choice, saved job searches). May also enable integration with social platforms for content sharing.</li>
+            <li><strong>Targeting Cookies</strong> – Used for delivering ads tailored to user interests, limiting ad frequency, and measuring campaign performance. While Mployus does not currently use targeting cookies directly, third-party platforms integrated with our site (e.g. Google) may employ them. Please review those third parties&apos; privacy policies for more information.</li>
           </ul>
         </section>
 
         <section>
-          <h4 className="text-lg font-semibold">How to Manage Your Cookie Preferences</h4>
-          <p>
-            On visiting mployus.ie, you can manage cookie preferences through our consent banner. Except for strictly necessary cookies, you can choose which categories to allow.
-          </p>
-          <p>
-            You can update preferences at any time by clicking the &ldquo;Manage Cookie Settings &ldquo; link on our website.
-          </p>
-        </section>
-
-        <section>
-          <h4 className="text-lg font-semibold">Browser Settings and Third-Party Tools</h4>
-          <p>
-            In addition to our banner, you can manage cookies using your browser settings. Most browsers allow deleting, blocking, or warning before storing cookies.
-          </p>
-          <p>
-            Useful tools and links include:
-          </p>
-          <ul className="list-disc list-inside space-y-1">
-            <li>All About Cookies – Browser Settings</li>
-            <li>About Cookies</li>
-            <li>Ad-Aware by Lavasoft</li>
-            <li>Spybot Search & Destroy</li>
-            <li>Webroot Spy Sweeper</li>
+          <h4 className="text-[var(--primary-color)] font-semibold">Managing Your Cookie Preferences</h4>
+          <span className='p11'>
+            You have control over how cookies are used on your device:
+          </span>
+          <ul className="list-disc list-inside space-y-2">
+            <li>Use the “Cookie Settings” link at the bottom of each page</li>
+            <li>Adjust your browser&apos;s cookie settings</li>
+            <li>Use third-party privacy or ad-blocking tools, where applicable</li>
           </ul>
-          <p className="text-red-600 italic">Note: Disabling cookies may affect site functionality.</p>
+          <span className="text-red-600 italic p11">
+            Note: Withdrawing consent for certain cookies may result in limited functionality or access.
+          </span>
         </section>
 
         <section>
-          <h4 className="text-lg font-semibold">Cookie Management via Google Tag Manager</h4>
-          <p>
-            Mployus Ireland uses Google Tag Manager to ensure compliant and accurate cookie script deployment across our site.
-          </p>
+          <h4 className="text-[var(--primary-color)] font-semibold">Cookie Retention Period</h4>
+          <span className='p11'>
+            Cookie-related data is retained for a maximum of 12 months, unless shorter periods are required by UK or Irish data protection legislation.
+          </span>
         </section>
 
         <section>
-          <h4 className="text-lg font-semibold">Changes to This Policy</h4>
-          <p>
-            We may update this Cookies Policy to reflect changes in legal requirements, technology, or usage. Updates will be posted on this page with a revised date.
-          </p>
-          <p>
-            By continuing to use our site, you agree to the practices outlined in this Policy.
-          </p>
-        </section>
-
-        <section>
-          <h4 className="text-lg font-semibold">Last Updated</h4>
-          <p>April 2025</p>
-        </section>
-
-        <section>
-          <h4 className="text-lg font-semibold">Contact</h4>
-          <p>
-            If you have questions regarding this policy, please contact us at: <a href="mailto:privacy@mployus.ie" className="text-blue-600 underline">privacy@mployus.ie</a>
-          </p>
+          <h4 className="text-[var(--primary-color)] font-semibold">Your Data Rights</h4>
+          <span className='p11'>
+            Under the UK GDPR, Data Protection Act 2018 (UK), EU GDPR (as retained in Irish law), and the Irish Data Protection Act 2018, you have the right to access, amend, or request deletion of your personal data.
+          </span>
+          <span className='p11'>
+            For more details, please refer to our&nbsp;
+            <Link href="/privacy-policy" className="text-blue-600 underline">Privacy Policy</Link>.
+          </span>
+          <span className='p11'>
+            To exercise your rights or to make an enquiry, please contact our Data Protection Officer at:&nbsp;
+            <a href="mailto:privacy@mployus.co.uk" className="text-blue-600 underline">privacy@mployus.co.uk</a>&nbsp;or&nbsp;
+            <a href="mailto:privacy@mployus.ie" className="text-blue-600 underline">privacy@mployus.ie</a>
+          </span>
         </section>
       </div>
     </section>
